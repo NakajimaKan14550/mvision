@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Machine Vision DX Solution | HIKROBOT & OPT</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Urbanist:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-dark: #1a202c;
+            --accent-gold: #b08d57;
+            --text-main: #2d3748;
+            --text-light: #718096;
+            --bg-soft: #f7fafc;
+            --white: #ffffff;
+            --border-color: #e2e8f0;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Noto Sans JP', sans-serif;
+            color: var(--text-main);
+            background-color: var(--white);
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* --- Hero Section --- */
+        header {
+            padding: 120px 0 80px;
+            background-color: var(--primary-dark);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .hero-title {
+            font-family: 'Urbanist', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 24px;
+            letter-spacing: 0.02em;
+        }
+
+        .hero-sub {
+            font-size: 1.1rem;
+            color: #a0aec0;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* --- Issues Section --- */
+        .section-padding { padding: 100px 0; }
+        .bg-gray { background-color: var(--bg-soft); }
+
+        .section-label {
+            color: var(--accent-gold);
+            font-weight: 700;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 16px;
+            letter-spacing: 0.1em;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 48px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 16px;
+        }
+
+        .issue-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));
+            gap: 40px;
+        }
+
+        .issue-item h3 {
+            font-size: 1.25rem;
+            color: var(--primary-dark);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .issue-item h3 i { color: var(--accent-gold); font-size: 1rem; }
+        .issue-item p { color: var(--text-light); font-size: 0.95rem; }
+
+        /* --- Solution Section --- */
+        .solution-card {
+            background: var(--white);
+            border: 1px solid var(--border-color);
+            padding: 40px;
+            margin-bottom: 40px;
+            border-radius: 4px;
+        }
+
+        .brand-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 24px;
+            border-left: 4px solid var(--primary-dark);
+            padding-left: 20px;
+        }
+
+        .brand-name { font-size: 1.5rem; font-weight: 700; }
+        .brand-tag { font-size: 0.9rem; color: var(--accent-gold); font-weight: 700; }
+
+        .product-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .product-list li {
+            padding-left: 20px;
+            position: relative;
+            font-size: 0.95rem;
+        }
+
+        .product-list li::before {
+            content: "・";
+            position: absolute;
+            left: 0;
+            color: var(--accent-gold);
+        }
+
+        /* --- Footer --- */
+        footer {
+            padding: 60px 0;
+            background: var(--primary-dark);
+            color: #718096;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        .footer-logo {
+            font-family: 'Urbanist', sans-serif;
+            color: var(--white);
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <h1 class="hero-title">光学の最適解と、実装の経済性。<br>マシンビジョンの「合理」を追求する。</h1>
+        <p class="hero-sub">
+            OPT Engineeringの極限光学がもたらす「歪みなき視覚」と、HIKROBOTが実現する「圧倒的な導入コスト効率」。<br>
+            二つの革命が融合し、現場から不確実性を排除します。
+        </p>
+    </div>
+</header>
+
+<section class="section-padding bg-gray">
+    <div class="container">
+        <span class="section-label">Challenges</span>
+        <h2 class="section-title">マシンビジョンが抱える4つの構造的問題</h2>
+        <div class="issue-grid">
+            <div class="issue-item">
+                <h3><i class="fa-solid fa-triangle-exclamation"></i>「撮像の限界」による誤検知</h3>
+                <p>周辺歪みやピントの甘さがAIの誤判定を招き、結局「人の確認」が必要な工程が残ってしまう。</p>
+            </div>
+            <div class="issue-item">
+                <h3><i class="fa-solid fa-coins"></i>「導入コスト」の壁</h3>
+                <p>高性能システムは高額で、投資対効果の観点から全ラインへの展開を断念せざるを得ない。</p>
+            </div>
+            <div class="issue-item">
+                <h3><i class="fa-solid fa-ruler-combined"></i>「設置スペース」の物理的制約</h3>
+                <p>大型の光学系は既存ラインへの組み込みが難しく、小型化すると撮像品質が低下するジレンマ。</p>
+            </div>
+            <div class="issue-item">
+                <h3><i class="fa-solid fa-user-slash"></i>「熟練者の判断」への依存</h3>
+                <p>環境変化やワークの個体差により、自動化できない「空白地帯」がDXの完遂を阻んでいる。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-padding">
+    <div class="container">
+        <span class="section-label">Solutions</span>
+        <h2 class="section-title">戦略的ハードウェア選定によるDXの完遂</h2>
+
+        <!-- HIKROBOT -->
+        <div class="solution-card">
+            <div class="brand-header">
+                <span class="brand-name">HIKROBOT</span>
+                <span class="brand-tag">標準化とコストメリット</span>
+            </div>
+            <p>圧倒的な量産規模を背景とした価格競争力。既存メーカーを凌駕するコストパフォーマンスで、全ライン一斉導入とDX自動化を現実のものにします。</p>
+            <ul class="product-list">
+                <li><strong>エリアカメラ</strong>：高解像度から高速モデルまで幅広くカバー</li>
+                <li><strong>ラインカメラ</strong>：ウェブ検査や回転体検査のシステム予算を大幅削減</li>
+                <li><strong>AI実装力</strong>：現場での「判断」を即座にデジタル化</li>
+            </ul>
+        </div>
+
+        <!-- OPT Engineering -->
+        <div class="solution-card">
+            <div class="brand-header">
+                <span class="brand-name">OPT Engineering</span>
+                <span class="brand-tag">光学の物理的限界を突破</span>
+            </div>
+            <p>「見える」の基準を変える特化型エンジニアリング。物理的な歪みを排除し、AIが最も判断しやすい高品位な画像を担保します。</p>
+            <ul class="product-list">
+                <li><strong>テレセントリックレンズ</strong>：寸法計測の歪みを物理的にゼロへ</li>
+                <li><strong>360度レンズ</strong>：ボアスコープ等、複雑な内側面を一括撮像</li>
+                <li><strong>液体レンズ応用</strong>：可動部なしで瞬時にピントを制御し、省スペース化を実現</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <span class="footer-logo">DX PLUMBER</span>
+        <p>徹底したDX自動化による人員削減と、持続可能な生産現場の構築を支援します。</p>
+        <p style="margin-top: 20px;">&copy; 2026 Advanced Automation Solutions</p>
+    </div>
+</footer>
+
+</body>
+</html>
