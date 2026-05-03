@@ -3,6 +3,284 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Machine Vision DX Solution</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Urbanist:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* 視認性を重視したカラーパレット */
+            --bg-white: #ffffff;
+            --text-main: #1a202c; /* 確実に読める濃いグレー */
+            --text-sub: #4a5568;
+            --accent-gold: #b08d57;
+            --hik-navy: #21304f;
+            --opt-red: #e60012;
+            --border-color: #e2e8f0;
+            --bg-soft-gray: #f7fafc;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: var(--bg-white);
+            color: var(--text-main);
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 60px 24px;
+        }
+
+        /* --- Header --- */
+        .hero {
+            text-align: center;
+            padding-bottom: 80px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-sub);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* --- Sections --- */
+        .section-label {
+            display: block;
+            color: var(--accent-gold);
+            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            margin-top: 80px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 40px;
+            font-weight: 700;
+        }
+
+        /* --- Challenges Grid --- */
+        .challenge-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .challenge-item {
+            background: var(--bg-soft-gray);
+            padding: 30px;
+            border-radius: 8px;
+        }
+
+        .challenge-item h3 {
+            font-size: 1.15rem;
+            margin-bottom: 10px;
+            color: var(--text-main);
+            border-left: 4px solid var(--accent-gold);
+            padding-left: 15px;
+        }
+
+        .challenge-item p {
+            font-size: 0.95rem;
+            color: var(--text-sub);
+            margin: 0;
+        }
+
+        /* --- Solution Cards --- */
+        .brand-card {
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+        }
+
+        .brand-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .brand-name {
+            font-family: 'Urbanist', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+        }
+
+        .brand-tagline {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+        }
+
+        .brand-desc {
+            font-size: 1.05rem;
+            margin-bottom: 30px;
+            color: var(--text-main);
+        }
+
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .feature-box {
+            background: var(--bg-soft-gray);
+            padding: 20px;
+            border-radius: 6px;
+        }
+
+        .feature-box strong {
+            display: block;
+            margin-bottom: 5px;
+            color: var(--text-main);
+        }
+
+        .feature-box span {
+            font-size: 0.9rem;
+            color: var(--text-sub);
+        }
+
+        /* --- Footer --- */
+        .footer {
+            margin-top: 100px;
+            padding: 60px 0;
+            background: var(--text-main);
+            color: var(--bg-white);
+            text-align: center;
+        }
+
+        .footer h2 {
+            font-family: 'Urbanist', sans-serif;
+            letter-spacing: 0.1em;
+            font-size: 1.4rem;
+        }
+
+        .footer p {
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .challenge-grid { grid-template-columns: 1fr; }
+            .brand-header { flex-direction: column; align-items: flex-start; gap: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header class="hero">
+        <h1>光学の最適解と、実装の経済性。<br>マシンビジョンの「合理」を追求する。</h1>
+        <p>
+            OPT Engineeringの極限光学がもたらす「歪みなき視覚」と、HIKROBOTが実現する「圧倒的な導入コスト効率」。<br>
+            二つの革命が融合し、現場から不確実性を排除します。
+        </p>
+    </header>
+
+    <span class="section-label">Challenges</span>
+    <h2 class="section-title">マシンビジョンが抱える4つの構造的問題</h2>
+
+    <div class="challenge-grid">
+        <div class="challenge-item">
+            <h3>「撮像の限界」による誤検知</h3>
+            <p>周辺歪みやピントの甘さがAIの誤判定を招き、結局「人の確認」が必要な工程が残ってしまう。</p>
+        </div>
+        <div class="challenge-item">
+            <h3>「導入コスト」の壁</h3>
+            <p>高性能システムは高額で、投資対効果の観点から全ラインへの展開を断念せざるを得ない。</p>
+        </div>
+        <div class="challenge-item">
+            <h3>「設置スペース」の物理的制約</h3>
+            <p>大型の光学系は既存ラインへの組み込みが難しく、小型化すると撮像品質が低下するジレンマ。</p>
+        </div>
+        <div class="challenge-item">
+            <h3>「熟練者の判断」への依存</h3>
+            <p>環境変化やワークの個体差により、自動化できない「空白地帯」がDXの完遂を阻んでいる。</p>
+        </div>
+    </div>
+
+    <span class="section-label">Solutions</span>
+    <h2 class="section-title">戦略的ハードウェア選定によるDXの完遂</h2>
+
+    <!-- HIKROBOT -->
+    <div class="brand-card">
+        <div class="brand-header">
+            <span class="brand-name" style="color: var(--hik-navy);">HIKROBOT</span>
+            <span class="brand-tagline">標準化とコストメリット</span>
+        </div>
+        <p class="brand-desc">圧倒的な量産規模を背景とした価格競争力。既存メーカーを凌駕するコストパフォーマンスで、全ライン一斉導入とDX自動化を現実のものにします。</p>
+        <div class="feature-list">
+            <div class="feature-box">
+                <strong>エリアカメラ</strong>
+                <span>高解像度から高速モデルまで幅広くカバー</span>
+            </div>
+            <div class="feature-box">
+                <strong>ラインカメラ</strong>
+                <span>ウェブ・回転体検査の予算を大幅削減</span>
+            </div>
+            <div class="feature-box">
+                <strong>AI実装力</strong>
+                <span>現場での「判断」を即座にデジタル化</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- OPT Engineering -->
+    <div class="brand-card">
+        <div class="brand-header">
+            <span class="brand-name" style="color: var(--opt-red);">OPT Engineering</span>
+            <span class="brand-tagline">光学の物理的限界を突破</span>
+        </div>
+        <p class="brand-desc">「見える」の基準を変える特化型エンジニアリング。物理的な歪みを排除し、AIが最も判断しやすい高品位な画像を担保します。</p>
+        <div class="feature-list">
+            <div class="feature-box">
+                <strong>テレセントリックレンズ</strong>
+                <span>寸法計測の歪みを物理的にゼロへ</span>
+            </div>
+            <div class="feature-box">
+                <strong>360度レンズ</strong>
+                <span>ボアスコープ等、複雑な内側面を一括撮像</span>
+            </div>
+            <div class="feature-box">
+                <strong>液体レンズ応用</strong>
+                <span>可動部なしでピント制御・省スペース化</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="container" style="padding: 0;">
+        <h2>DX PLUMBER</h2>
+        <p>徹底したDX自動化による人員削減と、持続可能な生産現場の構築を支援します。</p>
+        <p style="margin-top: 40px; font-size: 0.8rem; opacity: 0.5;">&copy; 2026 Advanced Automation Solutions</p>
+    </div>
+</footer>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Machine Vision DX Solution | HIKROBOT & OPT</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Urbanist:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
