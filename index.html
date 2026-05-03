@@ -339,3 +339,452 @@
 
 </body>
 </html>
+
+
+<!DOCTYPE html>
+
+<html lang="ja">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+
+        :root {
+
+            --bg-color: #0a0a0a;
+
+            --card-bg: #161616;
+
+            --accent-blue: #00d2ff;
+
+            --text-main: #ffffff;
+
+            --text-dim: #b0b0b0;
+
+            --border-color: #333;
+
+        }
+
+
+
+        .solution-container {
+
+            max-width: 1100px;
+
+            margin: 0 auto;
+
+            padding: 60px 20px;
+
+            background-color: var(--bg-color);
+
+            color: var(--text-main);
+
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+
+        }
+
+
+
+        .section-header {
+
+            margin-bottom: 50px;
+
+            text-align: left;
+
+        }
+
+
+
+        .tag {
+
+            color: var(--accent-blue);
+
+            font-size: 0.85rem;
+
+            font-weight: 700;
+
+            letter-spacing: 0.2em;
+
+            text-transform: uppercase;
+
+            display: block;
+
+            margin-bottom: 12px;
+
+        }
+
+
+
+        .title {
+
+            font-size: 2.2rem;
+
+            line-height: 1.3;
+
+            font-weight: 800;
+
+        }
+
+
+
+        .grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 40px;
+
+        }
+
+
+
+        @media (max-width: 900px) {
+
+            .grid { grid-template-columns: 1fr; }
+
+        }
+
+
+
+        .sol-card {
+
+            background: var(--card-bg);
+
+            border: 1px solid var(--border-color);
+
+            padding: 40px;
+
+            border-radius: 2px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+        }
+
+
+
+        .sol-card:hover {
+
+            border-color: var(--accent-blue);
+
+            box-shadow: 0 10px 30px rgba(0, 210, 255, 0.1);
+
+        }
+
+
+
+        .card-meta {
+
+            display: flex;
+
+            gap: 10px;
+
+            margin-bottom: 25px;
+
+        }
+
+
+
+        .badge {
+
+            font-size: 0.7rem;
+
+            padding: 4px 12px;
+
+            font-weight: 900;
+
+            letter-spacing: 0.05em;
+
+        }
+
+
+
+        .badge-opt { background: #e60012; color: #fff; }
+
+        .badge-hik { background: #21304f; color: #fff; border: 1px solid #3d5a91; }
+
+
+
+        .card-h3 {
+
+            font-size: 1.4rem;
+
+            margin-bottom: 20px;
+
+            color: var(--text-main);
+
+            font-weight: 700;
+
+        }
+
+
+
+        .card-p {
+
+            font-size: 0.95rem;
+
+            color: var(--text-dim);
+
+            line-height: 1.8;
+
+            margin-bottom: 15px;
+
+        }
+
+
+
+        .feature-list {
+
+            list-style: none;
+
+            padding: 0;
+
+            margin-top: auto;
+
+            border-top: 1px solid #222;
+
+            padding-top: 20px;
+
+        }
+
+
+
+        .feature-item {
+
+            font-size: 0.85rem;
+
+            color: var(--accent-blue);
+
+            margin-bottom: 8px;
+
+            display: flex;
+
+            align-items: center;
+
+        }
+
+
+
+        .feature-item::before {
+
+            content: "→";
+
+            margin-right: 10px;
+
+            font-weight: bold;
+
+        }
+
+
+
+        .cta-box {
+
+            margin-top: 80px;
+
+            padding: 60px;
+
+            background: linear-gradient(145deg, #111 0%, #001a20 100%);
+
+            border-left: 4px solid var(--accent-blue);
+
+            text-align: center;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+
+<div class="solution-container">
+
+    <div class="section-header">
+
+        <span class="tag">Strategic Approach</span>
+
+        <h2 class="title">光学の「物理的正解」と、<br>AI実装の「経済性」による課題解決</h2>
+
+    </div>
+
+
+
+    <div class="grid">
+
+        <div class="sol-card">
+
+            <div class="card-meta">
+
+                <span class="badge badge-opt">OPT Engineering</span>
+
+            </div>
+
+            <h3 class="card-h3">01. 物理層での歪み根絶</h3>
+
+            <p class="card-p">
+
+                多くの現場が直面する「誤検知」の主因は、レンズ特有の周辺歪みや遠近感による寸法の変化にあります。Opto Engineeringのテレセントリックレンズは、光線を光軸に対して平行に入射させることで、ワークの高さが変わっても倍率が変化しない「物理的な正解」を導き出します。
+
+            </p>
+
+            <p class="card-p">
+
+                ソフトウェア側での複雑な補正処理を不要にし、AIが最も判断しやすい高品位な生データを提供。これにより、「結局は人の目による再確認が必要」という二度手間を物理的に排除します。
+
+            </p>
+
+            <ul class="feature-list">
+
+                <li class="feature-item">寸法計測精度をサブミクロン単位で安定化</li>
+
+                <li class="feature-item">画像端の解像度劣化を抑え、AIの誤判定率を劇的に低減</li>
+
+            </ul>
+
+        </div>
+
+
+
+        <div class="sol-card">
+
+            <div class="card-meta">
+
+                <span class="badge badge-hik">HIKROBOT</span>
+
+            </div>
+
+            <h3 class="card-h3">02. 圧倒的な導入ROIの追求</h3>
+
+            <p class="card-p">
+
+                ハイエンドなマシンビジョンシステムは、従来、一部の重要工程にしか予算が下りない高価なものでした。HIKROBOTは、世界シェアを背景とした圧倒的な量産規模により、高性能なエリアカメラやラインカメラを既存メーカーの数分の一のコストで供給します。
+
+            </p>
+
+            <p class="card-p">
+
+                1ラインあたりの単価を抑えることで、工場全体の「全ライン一斉導入」を現実的な投資回収（ROI）プランに乗せることが可能に。点ではなく面での自動化、つまり真の意味での「人員削減」と「無人化」を支援します。
+
+            </p>
+
+            <ul class="feature-list">
+
+                <li class="feature-item">システム構築全体のコストを30%〜50%削減</li>
+
+                <li class="feature-item">安価なスマートカメラへのリプレイスで予備機の共通化を実現</li>
+
+            </ul>
+
+        </div>
+
+
+
+        <div class="sol-card">
+
+            <div class="card-meta">
+
+                <span class="badge badge-opt">OPT</span>
+
+                <span class="badge badge-hik">HIK</span>
+
+            </div>
+
+            <h3 class="card-h3">03. 狭小スペースへの極限実装</h3>
+
+            <p class="card-p">
+
+                「自動化したいが、カメラと照明を置くスペースがない」という物理的制約に対し、液体レンズ技術と統合型スマートカメラで回答します。Opto Engineeringの液体レンズは、ミリ秒単位でピントを電子制御するため、大型の電動フォーカス機構を排除できます。
+
+            </p>
+
+            <p class="card-p">
+
+                これに、演算PCを内蔵したHIKROBOTのスマートカメラを組み合わせることで、制御盤や複雑な配線を引き回すことなく、ワーク直近の狭い隙間へ検査機能を埋め込むことが可能です。
+
+            </p>
+
+            <ul class="feature-list">
+
+                <li class="feature-item">液体レンズによる高速追従（機械的摩耗ゼロ）</li>
+
+                <li class="feature-item">カメラ単体での画像処理による省スペース・低遅延</li>
+
+            </ul>
+
+        </div>
+
+
+
+        <div class="sol-card">
+
+            <div class="card-meta">
+
+                <span class="badge badge-hik">HIKROBOT</span>
+
+            </div>
+
+            <h3 class="card-h3">04. AIによる判断基準の標準化</h3>
+
+            <p class="card-p">
+
+                従来のルールベース検査では対応しきれない「傷の深さ」や「汚れの許容度」など、熟練者の経験に頼っていた「曖昧な判断」をHIKROBOTのディープラーニング・プラットフォーム（VM）がデジタル化します。
+
+            </p>
+
+            <p class="card-p">
+
+                高度なアルゴリズムをノーコードで直感的に実装できるため、現場スタッフが自らAIを調整・運用できる体制を構築。属人化を排除し、環境変化やワークの微細な仕様変更にも即座に対応できる、持続可能な生産ラインを構築します。
+
+            </p>
+
+            <ul class="feature-list">
+
+                <li class="feature-item">ディープラーニングによる非定形欠陥の自動抽出</li>
+
+                <li class="feature-item">現場スタッフによる設定変更を可能にするノーコードUI</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="cta-box">
+
+        <h3 class="title" style="font-size: 1.8rem; margin-bottom: 25px;">
+
+            「配管」としてのDX、その完遂のために。
+
+        </h3>
+
+        <p style="color: var(--text-dim); max-width: 800px; margin: 0 auto; line-height: 2;">
+
+            我々は単にハードウェアを売るのではなく、現場から不確実性を排除する「仕組み」を提供します。<br>
+
+            光学の物理限界を突き詰めるOpto Engineeringと、実装の経済性を革新するHIKROBOT。<br>
+
+            この組み合わせこそが、人員削減とコストダウンを両立させるDXの最短経路です。
+
+        </p>
+
+    </div>
+
+</div>
+
+
+
+</body>
+
+</html>
