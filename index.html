@@ -163,18 +163,84 @@
         </div>
     </div>
 
-    <div class="article-section">
-        <h2 class="article-h2">「静かなる課題」への技術的回答</h2>
-        <p class="article-p">
-            多くの現場で「AIを入れたが精度が安定しない」という声が上がります。その原因は、光学系を軽視し、不鮮明な画像をソフトウェアの力だけで解決しようとする設計思想にあります。
-            <strong>AIは魔法ではありません。</strong> 入力される画像の SN比（信号対雑音比）が低ければ、学習コストは膨らみ、判定は不安定になります。
-        </p>
+<!-- 「静かなる課題」への技術的回答セクション -->
+<section class="article-section">
+    <h2 class="article-h2">「静かなる課題」への技術的回答</h2>
+    <p class="article-p">
+        多くの現場で「AIを入れたが精度が安定しない」という声が上がります。その原因は、光学系を軽視し、不鮮明な画像をソフトウェアの力だけで解決しようとする設計思想にあります。
+        <strong>AIは魔法ではありません。</strong> 入力される画像の SN比（信号対雑音比）が低ければ、学習コストは膨らみ、判定は不安定になります。
+    </p>
 
-        <div class="image-container">
-            <!-- 実際のサイトに合わせてパスを調整してください -->
-            <img src="opt.png" alt="Optical Excellence Comparison">
-            <div class="image-caption">図1：OPTテレセントリックレンズによる歪みのない撮像（左）とAI判定の最適化（右）</div>
+    <!-- 01. OPT Engineering: 物理層の正解 -->
+    <div class="image-container">
+        <img src="image_f4bcd7.jpg" alt="OPT Telecentric Solution" style="width:100%; border-radius: 8px;">
+        <div class="image-caption">図1：OPTテレセントリックレンズによる歪みのない撮像（左）とAI判定の最適化（右）</div>
+    </div>
+    
+    <div class="solution-detail" style="margin-bottom: 60px;">
+        <h3 style="color: var(--opt-red); border-bottom: 1px solid #333; padding-bottom: 10px;">OPT ENGINEERING：AIの判断を迷わせない「撮像の純化」</h3>
+        <p class="article-p">
+            AIの推論精度を100%に近づける最短ルートは、アルゴリズムの改良ではなく「物理的な制約」の排除です。OPTのテレセントリックレンズは、周辺歪みや遠近感を排除し、AIにとって最も解釈しやすい「正解の画像」を提供します。これにより、AIモデルの軽量化と、圧倒的な判定安定性を両立させます。
+        </p>
+    </div>
+
+    <!-- 02. HIKROBOT: 処理層の経済性とエッジAI -->
+    <div class="hik-economic-section" style="background: rgba(26, 58, 110, 0.1); padding: 40px; border-radius: 16px; border: 1px solid var(--hik-navy);">
+        <h3 style="color: var(--accent-blue); margin-top: 0;">HIKROBOT：エッジAIによる「システム経済性」の革命</h3>
+        
+        <div style="display: flex; gap: 30px; flex-wrap: wrap; margin: 30px 0;">
+            <!-- HIK エッジAI 図解エリア -->
+            <div style="flex: 1; min-width: 300px; background: #000; padding: 20px; border-radius: 12px; text-align: center;">
+                <div style="color: var(--accent-gold); font-size: 0.8rem; margin-bottom: 15px; font-weight: bold;">【HIKROBOT Edge AI Architecture】</div>
+                <div style="display: flex; justify-content: space-around; align-items: center; color: #fff; font-size: 0.9rem;">
+                    <div style="border: 1px solid var(--accent-blue); padding: 10px; border-radius: 5px;">撮影（センサ）</div>
+                    <div style="font-size: 1.5rem;">→</div>
+                    <div style="background: var(--hik-navy); padding: 15px; border-radius: 5px; font-weight: bold;">エッジAI推論<br><span style="font-size: 0.7rem; font-weight: normal;">(SCスマートカメラ内)</span></div>
+                    <div style="font-size: 1.5rem;">→</div>
+                    <div style="border: 1px solid #4caf50; padding: 10px; border-radius: 5px;">OK / NG</div>
+                </div>
+                <p style="color: var(--text-dim); font-size: 0.75rem; margin-top: 15px;">カメラ内部で判定が完結。高価な産業用PCやGPUボードは不要です。</p>
+            </div>
+
+            <!-- 経済性 比較表 -->
+            <div style="flex: 1; min-width: 300px;">
+                <table style="width: 100%; border-collapse: collapse; font-size: 0.85rem; color: var(--text-main);">
+                    <thead>
+                        <tr style="border-bottom: 2px solid #444;">
+                            <th style="padding: 10px; text-align: left;">導入コスト項目</th>
+                            <th style="padding: 10px; text-align: center;">従来PCシステム</th>
+                            <th style="padding: 10px; text-align: center; color: var(--accent-blue);">HIK エッジAI</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom: 1px solid #333;">
+                            <td style="padding: 10px;">ハードウェア費用</td>
+                            <td style="padding: 10px; text-align: center;">高（PC+GPU）</td>
+                            <td style="padding: 10px; text-align: center; font-weight: bold;">低（カメラのみ）</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #333;">
+                            <td style="padding: 10px;">設置・配線工数</td>
+                            <td style="padding: 10px; text-align: center;">煩雑</td>
+                            <td style="padding: 10px; text-align: center; font-weight: bold;">極小</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #333;">
+                            <td style="padding: 10px;">OS・保守リスク</td>
+                            <td style="padding: 10px; text-align: center;">あり</td>
+                            <td style="padding: 10px; text-align: center; font-weight: bold;">なし（専用OS）</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="color: var(--accent-gold); font-weight: bold; font-size: 0.9rem; margin-top: 15px; text-align: right;">
+                    トータル導入コストを約30～50%削減可能
+                </p>
+            </div>
         </div>
+
+        <p class="article-p">
+            HIKROBOTのスマートカメラ（SCシリーズ）は、カメラ本体にAIプロセッサを内蔵しています。これにより、膨大な画像データをPCへ転送する際の「レイテンシ（遅延）」と「PC管理の工数」を根絶。現場のPLCと直接通信し、即座に結果を出力する「運用の経済性」こそが、製造DXにおける真の回答です。
+        </p>
+    </div>
+</section>
 
         <h2 class="article-h2">202X年の勝利条件：ミニマル自動化</h2>
         <p class="article-p">
