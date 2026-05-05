@@ -3,138 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Machine Vision DX Solution | Strategic Hardware</title>
+    <title>Strategic Machine Vision | Beyond Physical Constraints</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Urbanist:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --bg-deep: #0a0a0a;
-            --card-bg: #161616;
+            --bg-deep: #050505;
+            --card-bg: #111111;
             --accent-blue: #00d2ff;
+            --accent-gold: #c5a059;
             --opt-red: #e60012;
             --hik-navy: #3d5a91;
             --text-main: #ffffff;
-            --text-dim: #b0b0b0;
-            --border-color: #333333;
+            --text-dim: #a0a0a0;
+            --border-color: #222222;
         }
 
         body {
-            margin: 0;
-            padding: 0;
+            margin: 0; padding: 0;
             font-family: 'Noto Sans JP', sans-serif;
             background-color: var(--bg-deep);
             color: var(--text-main);
             line-height: 1.8;
+            overflow-x: hidden;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 60px 24px;
-        }
+        .container { max-width: 1100px; margin: 0 auto; padding: 80px 24px; }
 
-        /* --- Header --- */
-        header {
-            text-align: center;
-            padding-bottom: 80px;
+        /* --- Header: ストーリーの起点 --- */
+        header { text-align: center; padding-bottom: 100px; }
+        .hero-badge {
+            display: inline-block; color: var(--accent-gold);
+            font-family: 'Urbanist', sans-serif; font-weight: 700;
+            letter-spacing: 3px; border: 1px solid var(--accent-gold);
+            padding: 5px 20px; margin-bottom: 30px; font-size: 0.9rem;
         }
-
         .hero-title {
-            font-size: 2.8rem;
-            font-weight: 900;
-            margin-bottom: 20px;
-            background: linear-gradient(to right, #fff, #888);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-size: 3rem; font-weight: 900; line-height: 1.2;
+            background: linear-gradient(135deg, #fff 0%, #777 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .hero-sub {
+            max-width: 800px; margin: 40px auto; color: var(--text-dim);
+            font-size: 1.1rem; text-align: left; border-left: 2px solid #444; padding-left: 30px;
         }
 
-        .section-title {
-            font-size: 2rem;
-            margin-bottom: 50px;
-            border-left: 5px solid var(--accent-blue);
-            padding-left: 20px;
+        /* --- Analysis Section --- */
+        .analysis-box {
+            background: var(--card-bg); border: 1px solid var(--border-color);
+            padding: 40px; border-radius: 16px; margin-bottom: 100px;
         }
+        .analysis-h3 { color: var(--accent-blue); font-size: 1.4rem; margin-top: 0; }
 
         /* --- Grid System --- */
-        .grid {
-            display: flex;
-            flex-direction: column;
-            gap: 80px;
-        }
-
-        /* 画像が切れないための新しいカード構造 */
         .sol-card {
-            display: flex;
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            overflow: hidden;
-            align-items: stretch;
+            display: flex; background: var(--card-bg);
+            border: 1px solid var(--border-color); border-radius: 20px;
+            overflow: hidden; align-items: stretch; margin-bottom: 80px;
+            transition: transform 0.4s ease;
         }
+        .sol-card:hover { transform: translateY(-5px); border-color: #444; }
+        .sol-card.reverse { flex-direction: row-reverse; }
 
-        .sol-card.reverse {
-            flex-direction: row-reverse;
-        }
+        .card-content { flex: 1.2; padding: 60px; display: flex; flex-direction: column; justify-content: center; }
+        .card-image-box { flex: 1; background-color: #000; display: flex; align-items: center; justify-content: center; padding: 40px; }
+        .card-image-box img { max-width: 100%; height: auto; object-fit: contain; }
 
-        /* テキストエリア */
-        .card-content {
-            flex: 1;
-            padding: 60px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        /* 画像エリア：ここが重要 */
-        .card-image-box {
-            flex: 1.2; /* 画像を少し広めに確保 */
-            background-color: #000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px; /* 画像の周りに少し余白 */
-        }
-
-        .card-image-box img {
-            max-width: 100%;
-            height: auto;
-            object-fit: contain; /* 画像を切り取らずに収める */
-            display: block;
-        }
-
-        /* --- UI Elements --- */
+        /* --- Typography --- */
         .badge {
-            display: inline-block;
-            font-size: 0.75rem;
-            padding: 4px 12px;
-            font-weight: 900;
-            margin-bottom: 20px;
-            border-radius: 2px;
+            display: inline-block; font-size: 0.75rem; padding: 4px 15px;
+            font-weight: 900; margin-bottom: 25px; border-radius: 2px;
+            text-transform: uppercase; letter-spacing: 1px;
         }
-        .badge-opt { background: var(--opt-red); }
-        .badge-hik { background: var(--hik-navy); }
+        .badge-ai { background: var(--accent-gold); color: #000; }
+        .badge-opt { background: var(--opt-red); color: #fff; }
+        .badge-hik { background: var(--hik-navy); color: #fff; }
 
-        .card-h3 { font-size: 1.8rem; margin-bottom: 25px; }
-        .card-p { color: var(--text-dim); margin-bottom: 20px; font-size: 1rem; }
+        .card-h3 { font-size: 2rem; margin-bottom: 30px; line-height: 1.3; }
+        .card-p { color: var(--text-dim); margin-bottom: 25px; font-size: 1rem; text-align: justify; }
 
-        .feature-list {
-            list-style: none;
-            padding: 20px 0 0 0;
-            border-top: 1px solid #333;
-        }
-        .feature-item {
-            color: var(--accent-blue);
-            font-size: 0.9rem;
-            margin-bottom: 10px;
+        .feature-list { list-style: none; padding: 25px 0 0 0; border-top: 1px solid #333; }
+        .feature-item { color: var(--accent-blue); font-size: 0.95rem; margin-bottom: 12px; display: flex; align-items: center; }
+        .feature-item i { margin-right: 15px; font-size: 0.8rem; }
+
+        /* --- Strategy Footer --- */
+        .strategy-footer {
+            text-align: center; padding: 60px; background: linear-gradient(to bottom, #111, #000);
+            border-radius: 20px; border: 1px solid #222;
         }
 
-        /* --- Responsive --- */
         @media (max-width: 1024px) {
-            .sol-card, .sol-card.reverse {
-                flex-direction: column;
-            }
-            .card-content { padding: 40px; }
-            .card-image-box { order: -1; }
-            .hero-title { font-size: 2rem; }
+            .sol-card, .sol-card.reverse { flex-direction: column; }
+            .card-image-box { order: -1; min-height: 300px; }
+            .hero-title { font-size: 2.2rem; }
         }
     </style>
 </head>
@@ -142,53 +103,69 @@
 
 <div class="container">
     <header>
-        <h1 class="hero-title">光学の物理的正解と、実装の経済性</h1>
+        <div class="hero-badge">STRATEGIC ARCHITECTURE</div>
+        <h1 class="hero-title">光学の物理的正解と、<br>実装の経済的合理性</h1>
+        <div class="hero-sub">
+            マシンビジョンの真の課題は「撮像スペック」ではなく「システム設計の硬直性」にあります。死角を埋めるためのカメラ増設は、維持コストと故障リスクの肥大化を招くのみです。202X年、勝敗を分けるのは、物理的制約をエッジAIと適応型光学技術でバイパスし、システムを極限までシンプルに保つ「知的な適応力」です。
+        </div>
     </header>
 
-    <h2 class="section-title">構造的問題への技術的回答</h2>
-
-    <div class="grid">
-        <!-- 01. OPT Engineering Section -->
-        <div class="sol-card">
-            <div class="card-content">
-                <span class="badge badge-opt">OPT Engineering</span>
-                <h3 class="card-h3">物理層での歪み根絶</h3>
-                <p class="card-p">
-                    周辺歪みや遠近感による寸法の変化は、AIの誤判定を招く最大の要因です。テレセントリックレンズは、光軸に対し平行な光のみを捉えることで、ワークの高さに左右されない「物理的な正解」を導き出します。
-                </p>
-                <p class="card-p">
-                    ソフト側の補正に頼らず、AIが最も判断しやすい高品位な生データを担保。これにより「人の目による再確認」という無駄を根本から排除します。
-                </p>
-                <ul class="feature-list">
-                    <li class="feature-item">▶ 寸法計測精度をサブミクロン単位で安定化</li>
-                    <li class="feature-item">▶ 画像端の解像度劣化を抑え、AIの誤判定を防止</li>
-                </ul>
-            </div>
-            <div class="card-image-box">
-                <img src="opt.png" alt="Telecentric Lens Comparison">
-            </div>
+    <!-- 01. AI & Edge Logic -->
+    <div class="sol-card">
+        <div class="card-content">
+            <span class="badge badge-ai">Edge AI & Smart Control</span>
+            <h3 class="card-h3">「PCレス」がもたらす<br>現場の自律化</h3>
+            <p class="card-p">
+                従来の「カメラ＋画像処理PC」という構成は、通信遅延（レイテンシ）と配線の複雑化という構造的欠陥を抱えています。エッジAIを搭載したスマートカメラへの転換は、単なる機材更新ではありません。
+            </p>
+            <p class="card-p">
+                カメラ内部で推論・判定を完結させることにより、上位インフラへの負荷を最小化。多品種少量生産で求められる「ライン再構築の柔軟性」を、物理的な配線変更なしに実現する戦略的選択です。
+            </p>
+            <ul class="feature-list">
+                <li class="feature-item"><i class="fa-solid fa-bolt"></i> 処理遅延の極小化によるタクトタイム短縮</li>
+                <li class="feature-item"><i class="fa-solid fa-microchip"></i> 産業用PCのメンテナンスコストをゼロへ</li>
+            </ul>
         </div>
-
-        <!-- 02. HIKROBOT Section -->
-        <div class="sol-card reverse">
-            <div class="card-content">
-                <span class="badge badge-hik">HIKROBOT</span>
-                <h3 class="card-h3">圧倒的な導入ROIの追求</h3>
-                <p class="card-p">
-                    世界規模の量産背景により、高性能カメラを既存メーカーの数分の一のコストで供給。これまで予算的に断念していた全ラインへの「面での自動化」を可能にします。
-                </p>
-                <p class="card-p">
-                    AI処理系を内蔵したスマートカメラは、複雑な配線を不要にし、狭小スペースへの極限実装と人員削減を同時に完遂します。
-                </p>
-                <ul class="feature-list">
-                    <li class="feature-item">▶ システム構築コストを30%〜50%削減</li>
-                    <li class="feature-item">▶ ディープラーニングによる非定形欠陥の自動抽出</li>
-                </ul>
-            </div>
-            <div class="card-image-box">
-                <img src="hik.png" alt="HIKROBOT AI Defect Detection">
-            </div>
+        <div class="card-image-box">
+            <img src="hik.png" alt="Smart Camera AI Processing">
         </div>
+    </div>
+
+    <!-- 02. Adaptive Optics (Liquid Lens) -->
+    <div class="sol-card reverse">
+        <div class="card-content">
+            <span class="badge badge-opt">Adaptive Optics</span>
+            <h3 class="card-h3">液体レンズ技術による<br>死角とボケの根絶</h3>
+            <p class="card-p">
+                ワークの高さ変動や多点検査に対し、物理的なフォーカス駆動はあまりに遅く、脆弱です。電圧制御でレンズ形状を瞬時に変える「液体レンズ」技術は、0.01秒単位での動的フォーカスを実現します。
+            </p>
+            <p class="card-p">
+                テレセントリックレンズによる周辺歪みの除去と、液体レンズによるピント位置の瞬時切り替えを組み合わせることで、理論上「死角ゼロ」の撮像環境を構築。複数のカメラを設置するコストとリスクを、1つの高度な光学系で代替します。
+            </p>
+            <ul class="feature-list">
+                <li class="feature-item"><i class="fa-solid fa-eye"></i> 製品高低差に左右されない高精細撮像</li>
+                <li class="feature-item"><i class="fa-solid fa-layer-group"></i> 複数カメラ構成を統合し、構成を簡略化</li>
+            </ul>
+        </div>
+        <div class="card-image-box">
+            <img src="opt.png" alt="High Precision Optical Engineering">
+        </div>
+    </div>
+
+    <!-- 03. Strategic ROI -->
+    <div class="analysis-box">
+        <h3 class="analysis-h3">【202X年の展望】ROIを最大化する「モジュール的思考」</h3>
+        <p class="card-p" style="margin-bottom: 0;">
+            高感度CMOSを搭載した標準カメラと、AI読取機能を特化させたコードリーダ、そして歪みのない光学系。これらを適材適所で組み合わせる「モジュール的アプローチ」こそが、導入コストを下げつつシステムを堅牢にする唯一の道です。物理レイヤーでの最適化を徹底することが、結果としてAIの学習コストを下げ、持続可能な自動化を約束します。
+        </p>
+    </div>
+
+    <div class="strategy-footer">
+        <h3 class="urbanist" style="color: var(--accent-gold); letter-spacing: 2px;">NEXT ACTION</h3>
+        <p class="card-p" style="text-align: center;">
+            弊社では「エッジAIカメラ」や「液体レンズ」を用いた次世代光学ソリューションの技術検証を支援しております。
+        </p>
+        <p style="font-weight: 700; color: var(--accent-blue);">複雑化する現場の「死角」を、技術でシンプルに。 </p>
     </div>
 </div>
 
