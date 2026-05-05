@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Strategic Machine Vision | Beyond Physical Constraints</title>
+    <title>Paradigm Shift in Machine Vision | HIKROBOT × OPT ENGINEERING</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Urbanist:wght@600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -13,7 +13,7 @@
             --accent-blue: #00d2ff;
             --accent-gold: #c5a059;
             --opt-red: #e60012;
-            --hik-navy: #3d5a91;
+            --hik-navy: #1a3a6e;
             --text-main: #ffffff;
             --text-dim: #a0a0a0;
             --border-color: #222222;
@@ -25,77 +25,85 @@
             background-color: var(--bg-deep);
             color: var(--text-main);
             line-height: 1.8;
-            overflow-x: hidden;
         }
 
-        .container { max-width: 1100px; margin: 0 auto; padding: 80px 24px; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 60px 24px; }
 
-        /* --- Header: ストーリーの起点 --- */
-        header { text-align: center; padding-bottom: 100px; }
+        /* --- Header --- */
+        header { text-align: center; padding: 60px 0 100px; border-bottom: 1px solid var(--border-color); }
         .hero-badge {
             display: inline-block; color: var(--accent-gold);
             font-family: 'Urbanist', sans-serif; font-weight: 700;
             letter-spacing: 3px; border: 1px solid var(--accent-gold);
-            padding: 5px 20px; margin-bottom: 30px; font-size: 0.9rem;
+            padding: 5px 20px; margin-bottom: 30px; font-size: 0.8rem;
         }
         .hero-title {
-            font-size: 3rem; font-weight: 900; line-height: 1.2;
-            background: linear-gradient(135deg, #fff 0%, #777 100%);
+            font-size: 2.8rem; font-weight: 900; line-height: 1.3;
+            background: linear-gradient(135deg, #fff 0%, #888 100%);
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
         }
-        .hero-sub {
-            max-width: 800px; margin: 40px auto; color: var(--text-dim);
-            font-size: 1.1rem; text-align: left; border-left: 2px solid #444; padding-left: 30px;
-        }
 
-        /* --- Analysis Section --- */
-        .analysis-box {
+        /* --- Executive Summary --- */
+        .summary-box {
+            background: rgba(197, 160, 89, 0.05);
+            border: 1px solid var(--accent-gold);
+            padding: 40px; border-radius: 12px; margin: -50px auto 80px;
+            max-width: 900px; position: relative; z-index: 10;
+        }
+        .summary-box h2 { color: var(--accent-gold); font-size: 1.2rem; margin-top: 0; }
+        .summary-list { list-style: none; padding: 0; margin: 0; }
+        .summary-item { margin-bottom: 15px; padding-left: 25px; position: relative; font-size: 0.95rem; }
+        .summary-item::before { content: "✔"; position: absolute; left: 0; color: var(--accent-gold); }
+
+        /* --- Brand Section --- */
+        .brand-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 80px; }
+        .brand-card {
             background: var(--card-bg); border: 1px solid var(--border-color);
-            padding: 40px; border-radius: 16px; margin-bottom: 100px;
+            border-radius: 20px; overflow: hidden; display: flex; flex-direction: column;
         }
-        .analysis-h3 { color: var(--accent-blue); font-size: 1.4rem; margin-top: 0; }
+        .brand-header { padding: 30px; display: flex; align-items: center; gap: 20px; }
+        .brand-logo-area { height: 50px; font-weight: 900; font-size: 1.5rem; display: flex; align-items: center; }
+        .hik-brand { color: #fff; background: var(--hik-navy); padding: 0 15px; }
+        .opt-brand { color: #fff; background: var(--opt-red); padding: 0 15px; }
+        
+        .brand-body { padding: 0 30px 40px; flex-grow: 1; }
+        .brand-body h3 { font-size: 1.4rem; color: #fff; margin-bottom: 20px; }
+        .brand-body p { font-size: 0.9rem; color: var(--text-dim); text-align: justify; }
 
-        /* --- Grid System --- */
-        .sol-card {
-            display: flex; background: var(--card-bg);
-            border: 1px solid var(--border-color); border-radius: 20px;
-            overflow: hidden; align-items: stretch; margin-bottom: 80px;
-            transition: transform 0.4s ease;
-        }
-        .sol-card:hover { transform: translateY(-5px); border-color: #444; }
-        .sol-card.reverse { flex-direction: row-reverse; }
-
-        .card-content { flex: 1.2; padding: 60px; display: flex; flex-direction: column; justify-content: center; }
-        .card-image-box { flex: 1; background-color: #000; display: flex; align-items: center; justify-content: center; padding: 40px; }
-        .card-image-box img { max-width: 100%; height: auto; object-fit: contain; }
-
-        /* --- Typography --- */
-        .badge {
-            display: inline-block; font-size: 0.75rem; padding: 4px 15px;
-            font-weight: 900; margin-bottom: 25px; border-radius: 2px;
-            text-transform: uppercase; letter-spacing: 1px;
-        }
-        .badge-ai { background: var(--accent-gold); color: #000; }
-        .badge-opt { background: var(--opt-red); color: #fff; }
-        .badge-hik { background: var(--hik-navy); color: #fff; }
-
-        .card-h3 { font-size: 2rem; margin-bottom: 30px; line-height: 1.3; }
-        .card-p { color: var(--text-dim); margin-bottom: 25px; font-size: 1rem; text-align: justify; }
-
-        .feature-list { list-style: none; padding: 25px 0 0 0; border-top: 1px solid #333; }
-        .feature-item { color: var(--accent-blue); font-size: 0.95rem; margin-bottom: 12px; display: flex; align-items: center; }
-        .feature-item i { margin-right: 15px; font-size: 0.8rem; }
-
-        /* --- Strategy Footer --- */
-        .strategy-footer {
-            text-align: center; padding: 60px; background: linear-gradient(to bottom, #111, #000);
-            border-radius: 20px; border: 1px solid #222;
+        .tech-list { margin-top: 20px; padding: 0; list-style: none; }
+        .tech-tag {
+            display: inline-block; background: #222; border: 1px solid #444;
+            padding: 3px 10px; border-radius: 4px; font-size: 0.75rem;
+            margin: 0 5px 8px 0; color: var(--accent-blue);
         }
 
-        @media (max-width: 1024px) {
-            .sol-card, .sol-card.reverse { flex-direction: column; }
-            .card-image-box { order: -1; min-height: 300px; }
-            .hero-title { font-size: 2.2rem; }
+        /* --- Analysis Content --- */
+        .article-section { max-width: 900px; margin: 0 auto 100px; }
+        .article-h2 { font-size: 2rem; border-left: 5px solid var(--accent-blue); padding-left: 20px; margin-bottom: 40px; }
+        .article-p { font-size: 1.05rem; color: var(--text-dim); margin-bottom: 30px; }
+
+        /* --- Image Box --- */
+        .image-container { background: #000; border-radius: 12px; padding: 40px; margin: 40px 0; text-align: center; border: 1px solid #333; }
+        .image-container img { max-width: 100%; height: auto; opacity: 0.9; }
+        .image-caption { font-size: 0.8rem; color: var(--accent-gold); margin-top: 15px; }
+
+        /* --- Footer / Action --- */
+        .action-box {
+            background: linear-gradient(135deg, #111 0%, #000 100%);
+            border: 1px solid var(--accent-blue);
+            padding: 60px; border-radius: 24px; text-align: center;
+        }
+        .action-box h3 { font-size: 1.8rem; margin-bottom: 20px; }
+        .btn {
+            display: inline-block; background: var(--accent-blue); color: #000;
+            padding: 15px 40px; border-radius: 50px; font-weight: 900;
+            text-decoration: none; transition: 0.3s;
+        }
+        .btn:hover { background: #fff; transform: scale(1.05); }
+
+        @media (max-width: 850px) {
+            .brand-grid { grid-template-columns: 1fr; }
+            .hero-title { font-size: 2rem; }
         }
     </style>
 </head>
@@ -103,71 +111,92 @@
 
 <div class="container">
     <header>
-        <div class="hero-badge">STRATEGIC ARCHITECTURE</div>
-        <h1 class="hero-title">光学の物理的正解と、<br>実装の経済的合理性</h1>
-        <div class="hero-sub">
-            マシンビジョンの真の課題は「撮像スペック」ではなく「システム設計の硬直性」にあります。死角を埋めるためのカメラ増設は、維持コストと故障リスクの肥大化を招くのみです。202X年、勝敗を分けるのは、物理的制約をエッジAIと適応型光学技術でバイパスし、システムを極限までシンプルに保つ「知的な適応力」です。
-        </div>
+        <div class="hero-badge">TECHNICAL INSIGHT 202X</div>
+        <h1 class="hero-title">「工場の目」の限界突破：<br>AIと光学技術の融合がもたらすパラダイムシフト</h1>
     </header>
 
-    <!-- 01. AI & Edge Logic -->
-    <div class="sol-card">
-        <div class="card-content">
-            <span class="badge badge-ai">Edge AI & Smart Control</span>
-            <h3 class="card-h3">「PCレス」がもたらす<br>現場の自律化</h3>
-            <p class="card-p">
-                従来の「カメラ＋画像処理PC」という構成は、通信遅延（レイテンシ）と配線の複雑化という構造的欠陥を抱えています。エッジAIを搭載したスマートカメラへの転換は、単なる機材更新ではありません。
-            </p>
-            <p class="card-p">
-                カメラ内部で推論・判定を完結させることにより、上位インフラへの負荷を最小化。多品種少量生産で求められる「ライン再構築の柔軟性」を、物理的な配線変更なしに実現する戦略的選択です。
-            </p>
-            <ul class="feature-list">
-                <li class="feature-item"><i class="fa-solid fa-bolt"></i> 処理遅延の極小化によるタクトタイム短縮</li>
-                <li class="feature-item"><i class="fa-solid fa-microchip"></i> 産業用PCのメンテナンスコストをゼロへ</li>
-            </ul>
+    <div class="summary-box">
+        <h2>【エグゼクティブ・サマリー】</h2>
+        <ul class="summary-list">
+            <li class="summary-item">検査自動化は「画素数競争」から「情報の質」と「エッジでの即時判断」へ移行。</li>
+            <li class="summary-item">HIKROBOTのAI搭載エッジ処理により、PCレスで微細欠陥の検知・判定を完結。</li>
+            <li class="summary-item">OPT ENGINEERINGの光学精度がAIの演算負荷を下げ、システム全体のROIを最大化。</li>
+        </ul>
+    </div>
+
+    <!-- Brand Features Section -->
+    <div class="brand-grid">
+        <!-- HIKROBOT -->
+        <div class="brand-card">
+            <div class="brand-header">
+                <div class="brand-logo-area hik-brand">HIKROBOT</div>
+            </div>
+            <div class="brand-body">
+                <h3>インテリジェントな判定の「脳」</h3>
+                <p>世界トップクラスのシェアを誇るHIKROBOT。単なるカメラメーカーではなく、VPU/GPUを搭載した「スマートカメラ（SCシリーズ）」によって、検査PCを廃止する先駆者です。</p>
+                <div class="tech-list">
+                    <span class="tech-tag">SCシリーズ：AIプロセッサ内蔵</span>
+                    <span class="tech-tag">VMソフトウェア：ノンコードAI開発</span>
+                    <span class="tech-tag">超高速ラインスキャン</span>
+                    <span class="tech-tag">ディープラーニング検品</span>
+                </div>
+                <p style="margin-top: 15px;">特徴：圧倒的な量産背景によるコストパフォーマンスと、複雑な非定形欠陥を瞬時に学習・推論するアルゴリズムの堅牢性。</p>
+            </div>
         </div>
-        <div class="card-image-box">
-            <img src="hik.png" alt="Smart Camera AI Processing">
+
+        <!-- OPT ENGINEERING -->
+        <div class="brand-card">
+            <div class="brand-header">
+                <div class="brand-logo-area opt-brand">OPT ENGINEERING</div>
+            </div>
+            <div class="brand-body">
+                <h3>ノイズを排除する「究極の入力系」</h3>
+                <p>イタリアが誇る精密光学の雄。AIが最も判断しやすい「正解の画像」を作るために、物理レイヤーで歪みをゼロにし、コントラストを最大化します。</p>
+                <div class="tech-list">
+                    <span class="tech-tag">テレセントリックレンズの世界的権威</span>
+                    <span class="tech-tag">360°外観検査レンズ</span>
+                    <span class="tech-tag">特殊波長照明技術</span>
+                    <span class="tech-tag">サブミクロン精度の歪み補正</span>
+                </div>
+                <p style="margin-top: 15px;">特徴：レンズ歪みや遠近感を物理的に解消。AIが「迷う」原因となるノイズを撮像段階でカットし、判定精度を極限まで高めます。</p>
+            </div>
         </div>
     </div>
 
-    <!-- 02. Adaptive Optics (Liquid Lens) -->
-    <div class="sol-card reverse">
-        <div class="card-content">
-            <span class="badge badge-opt">Adaptive Optics</span>
-            <h3 class="card-h3">液体レンズ技術による<br>死角とボケの根絶</h3>
-            <p class="card-p">
-                ワークの高さ変動や多点検査に対し、物理的なフォーカス駆動はあまりに遅く、脆弱です。電圧制御でレンズ形状を瞬時に変える「液体レンズ」技術は、0.01秒単位での動的フォーカスを実現します。
-            </p>
-            <p class="card-p">
-                テレセントリックレンズによる周辺歪みの除去と、液体レンズによるピント位置の瞬時切り替えを組み合わせることで、理論上「死角ゼロ」の撮像環境を構築。複数のカメラを設置するコストとリスクを、1つの高度な光学系で代替します。
-            </p>
-            <ul class="feature-list">
-                <li class="feature-item"><i class="fa-solid fa-eye"></i> 製品高低差に左右されない高精細撮像</li>
-                <li class="feature-item"><i class="fa-solid fa-layer-group"></i> 複数カメラ構成を統合し、構成を簡略化</li>
-            </ul>
-        </div>
-        <div class="card-image-box">
-            <img src="opt.png" alt="High Precision Optical Engineering">
-        </div>
-    </div>
-
-    <!-- 03. Strategic ROI -->
-    <div class="analysis-box">
-        <h3 class="analysis-h3">【202X年の展望】ROIを最大化する「モジュール的思考」</h3>
-        <p class="card-p" style="margin-bottom: 0;">
-            高感度CMOSを搭載した標準カメラと、AI読取機能を特化させたコードリーダ、そして歪みのない光学系。これらを適材適所で組み合わせる「モジュール的アプローチ」こそが、導入コストを下げつつシステムを堅牢にする唯一の道です。物理レイヤーでの最適化を徹底することが、結果としてAIの学習コストを下げ、持続可能な自動化を約束します。
+    <div class="article-section">
+        <h2 class="article-h2">「静かなる課題」への技術的回答</h2>
+        <p class="article-p">
+            多くの現場で「AIを入れたが精度が安定しない」という声が上がります。その原因は、光学系を軽視し、不鮮明な画像をソフトウェアの力だけで解決しようとする設計思想にあります。
+            <strong>AIは魔法ではありません。</strong> 入力される画像の SN比（信号対雑音比）が低ければ、学習コストは膨らみ、判定は不安定になります。
         </p>
-    </div>
 
-    <div class="strategy-footer">
-        <h3 class="urbanist" style="color: var(--accent-gold); letter-spacing: 2px;">NEXT ACTION</h3>
-        <p class="card-p" style="text-align: center;">
-            弊社では「エッジAIカメラ」や「液体レンズ」を用いた次世代光学ソリューションの技術検証を支援しております。
+        <div class="image-container">
+            <!-- 実際のサイトに合わせてパスを調整してください -->
+            <img src="opt.png" alt="Optical Excellence Comparison">
+            <div class="image-caption">図1：OPTテレセントリックレンズによる歪みのない撮像（左）とAI判定の最適化（右）</div>
+        </div>
+
+        <h2 class="article-h2">202X年の勝利条件：ミニマル自動化</h2>
+        <p class="article-p">
+            今後の製造DXの成否は、いかにシステムを「シンプル」に保てるかにかかっています。
         </p>
-        <p style="font-weight: 700; color: var(--accent-blue);">複雑化する現場の「死角」を、技術でシンプルに。 </p>
+        <ul style="color: var(--text-dim); margin-bottom: 40px;">
+            <li style="margin-bottom: 15px;"><strong>PCレス化：</strong> HIKROBOTのスマートカメラにより、ライン脇の巨大なPCラックを排除。通信遅延のないリアルタイム判定を実現。</li>
+            <li style="margin-bottom: 15px;"><strong>情報の鮮明化：</strong> OPTの光学設計により、AIが識別すべき「特徴量」を物理的に際立たせる。これにより軽量なAIモデルでも超高精度な検知が可能に。</li>
+        </ul>
+
+        <div class="action-box">
+            <span class="hero-badge" style="border-color: var(--accent-blue); color: var(--accent-blue);">SOLUTION ARCHITECT</span>
+            <h3>複雑すぎる検査システムを、<br>「最強の2社」で再構築しませんか？</h3>
+            <p class="article-p" style="text-align: center;">HIKROBOTのAIパワーとOPTの精密光学を組み合わせた、<br>現場主導型の「ミニマル自動化」構成案をご提案します。</p>
+            <a href="#" class="btn">技術資料・検証事例を請求する</a>
+        </div>
     </div>
 </div>
+
+<footer style="text-align: center; padding: 60px; color: #444; border-top: 1px solid #222;">
+    <p>&copy; 2026 Advanced Inspection Strategy. All Rights Reserved.</p>
+</footer>
 
 </body>
 </html>
