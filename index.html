@@ -27,10 +27,40 @@
             line-height: 1.8;
         }
 
-        .container { max-width: 1100px; margin: 0 auto; padding: 60px 24px; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 20px 24px 60px; }
+
+        /* --- Global Navigation / Top Logo --- */
+        nav {
+            padding: 20px 0;
+            margin-bottom: 20px;
+        }
+        .top-logo {
+            height: 45px;
+            width: auto;
+            display: block;
+            transition: opacity 0.3s;
+        }
+        .top-logo:hover {
+            opacity: 0.8;
+        }
 
         /* --- Header --- */
-        header { text-align: center; padding: 60px 0 100px; border-bottom: 1px solid var(--border-color); }
+        header { text-align: center; padding: 40px 0 80px; border-bottom: 1px solid var(--border-color); }
+        
+        .partner-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .partner-logos img {
+            height: 45px;
+            width: auto;
+            filter: brightness(0) invert(1); /* 白一色に揃える場合 */
+            opacity: 0.9;
+        }
+
         .hero-badge {
             display: inline-block; color: var(--accent-gold);
             font-family: 'Urbanist', sans-serif; font-weight: 700;
@@ -38,82 +68,56 @@
             padding: 5px 20px; margin-bottom: 30px; font-size: 0.8rem;
         }
         .hero-title {
-            font-size: 2.8rem; font-weight: 900; line-height: 1.3;
+            font-size: 2.8rem; font-weight: 900; line-height: 1.4;
             background: linear-gradient(135deg, #fff 0%, #888 100%);
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            margin: 0;
         }
 
-        /* --- Executive Summary --- */
-        .summary-box {
-            background: rgba(197, 160, 89, 0.05);
-            border: 1px solid var(--accent-gold);
-            padding: 40px; border-radius: 12px; margin: -50px auto 80px;
-            max-width: 900px; position: relative; z-index: 10;
-        }
-        .summary-box h2 { color: var(--accent-gold); font-size: 1.2rem; margin-top: 0; }
-        .summary-list { list-style: none; padding: 0; margin: 0; }
-        .summary-item { margin-bottom: 15px; padding-left: 25px; position: relative; font-size: 0.95rem; }
-        .summary-item::before { content: "✔"; position: absolute; left: 0; color: var(--accent-gold); }
-
-        /* --- Brand Section --- */
-        .brand-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 80px; }
-        .brand-card {
-            background: var(--card-bg); border: 1px solid var(--border-color);
-            border-radius: 20px; overflow: hidden; display: flex; flex-direction: column;
-        }
-        .brand-header { padding: 30px; display: flex; align-items: center; gap: 20px; }
-        .brand-logo-area { height: 50px; font-weight: 900; font-size: 1.5rem; display: flex; align-items: center; }
-        .hik-brand { color: #fff; background: var(--hik-navy); padding: 0 15px; }
-        .opt-brand { color: #fff; background: var(--opt-red); padding: 0 15px; }
-        
-        .brand-body { padding: 0 30px 40px; flex-grow: 1; }
-        .brand-body h3 { font-size: 1.4rem; color: #fff; margin-bottom: 20px; }
-        .brand-body p { font-size: 0.9rem; color: var(--text-dim); text-align: justify; }
-
-        .tech-list { margin-top: 20px; padding: 0; list-style: none; }
-        .tech-tag {
-            display: inline-block; background: #222; border: 1px solid #444;
-            padding: 3px 10px; border-radius: 4px; font-size: 0.75rem;
-            margin: 0 5px 8px 0; color: var(--accent-blue);
-        }
-
-        /* --- Analysis Content --- */
-        .article-section { max-width: 900px; margin: 0 auto 100px; }
+        /* 既存の他スタイルは省略（以下略） */
+        .article-section { max-width: 900px; margin: 60px auto 100px; }
         .article-h2 { font-size: 2rem; border-left: 5px solid var(--accent-blue); padding-left: 20px; margin-bottom: 40px; }
         .article-p { font-size: 1.05rem; color: var(--text-dim); margin-bottom: 30px; }
 
-        /* --- Image Box --- */
-        .image-container { background: #000; border-radius: 12px; padding: 40px; margin: 40px 0; text-align: center; border: 1px solid #333; }
-        .image-container img { max-width: 100%; height: auto; opacity: 0.9; }
-        .image-caption { font-size: 0.8rem; color: var(--accent-gold); margin-top: 15px; }
-
-        /* --- Footer / Action --- */
-        .action-box {
-            background: linear-gradient(135deg, #111 0%, #000 100%);
-            border: 1px solid var(--accent-blue);
-            padding: 60px; border-radius: 24px; text-align: center;
-        }
-        .action-box h3 { font-size: 1.8rem; margin-bottom: 20px; }
-        .btn {
-            display: inline-block; background: var(--accent-blue); color: #000;
-            padding: 15px 40px; border-radius: 50px; font-weight: 900;
-            text-decoration: none; transition: 0.3s;
-        }
-        .btn:hover { background: #fff; transform: scale(1.05); }
-
         @media (max-width: 850px) {
-            .brand-grid { grid-template-columns: 1fr; }
-            .hero-title { font-size: 2rem; }
+            .partner-logos { gap: 20px; }
+            .partner-logos img { height: 30px; }
+            .hero-title { font-size: 1.8rem; }
         }
     </style>
 </head>
 <body>
 
 <div class="container">
+    <nav>
+        <a href="https://nakajimakan14550.github.io/home/">
+            <img src="logo.png" alt="CHRONIX" class="top-logo">
+        </a>
+    </nav>
+
     <header>
+        <div class="partner-logos">
+            <img src="hik-logo.png" alt="HIKROBOT">
+            <img src="opt-logo.png" alt="OPT ENGINEERING">
+        </div>
+
         <div class="hero-badge">TECHNICAL INSIGHT 202X</div>
+        
         <h1 class="hero-title">「工場の目」の限界突破：<br>AIと光学技術の融合がもたらすパラダイムシフト</h1>
     </header>
+
+    <main class="article-section">
+        <h2 class="article-h2">知能化するビジョンと、進化する光学</h2>
+        <p class="article-p">
+            製造現場における「自動化」は今、単なるルールの実行から「自律的な判断」のフェーズへと移行しています。
+            業界をリードするHIKROBOTのAI搭載スマートカメラと、OPT Engineeringが誇る高精度なテレセントリックレンズの融合は、
+            これまで人間の感覚に頼らざるを得なかった外観検査や、ミクロン単位の精密計測を完全に無人化するポテンシャルを秘めています。
+        </p>
+        </main>
+</div>
+
+</body>
+</html>
 
     <div class="summary-box">
         <h2>【エグゼクティブ・サマリー】</h2>
