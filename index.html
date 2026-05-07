@@ -29,36 +29,19 @@
 
         .container { max-width: 1100px; margin: 0 auto; padding: 20px 24px 60px; }
 
-        /* --- Global Navigation / Top Logo --- */
-        nav {
-            padding: 20px 0;
-            margin-bottom: 20px;
-        }
-        .top-logo {
-            height: 45px;
-            width: auto;
-            display: block;
-            transition: opacity 0.3s;
-        }
-        .top-logo:hover {
-            opacity: 0.8;
-        }
+        /* --- Global Navigation --- */
+        nav { padding: 20px 0; margin-bottom: 20px; }
+        .top-logo { height: 45px; width: auto; display: block; transition: opacity 0.3s; }
+        .top-logo:hover { opacity: 0.8; }
 
         /* --- Header --- */
         header { text-align: center; padding: 40px 0 80px; border-bottom: 1px solid var(--border-color); }
-        
-        .partner-logos {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-        .partner-logos img {
-            height: 45px;
-            width: auto;
-            filter: brightness(0) invert(1); /* 白一色に揃える場合 */
-            opacity: 0.9;
+        .partner-logos { display: flex; justify-content: center; align-items: center; gap: 40px; margin-bottom: 40px; }
+        .partner-logos img { 
+            height: 50px; 
+            width: auto; 
+            opacity: 0.9; 
+            mix-blend-mode: lighten; /* 白背景ロゴを透過させる */
         }
 
         .hero-badge {
@@ -74,15 +57,79 @@
             margin: 0;
         }
 
-        /* 既存の他スタイルは省略（以下略） */
+        /* --- Executive Summary --- */
+        .summary-box {
+            background: rgba(197, 160, 89, 0.05);
+            border: 1px solid var(--accent-gold);
+            padding: 40px; border-radius: 12px; margin: -50px auto 80px;
+            max-width: 900px; position: relative; z-index: 10;
+            backdrop-filter: blur(10px);
+        }
+        .summary-box h2 { color: var(--accent-gold); font-size: 1.2rem; margin-top: 0; }
+        .summary-list { list-style: none; padding: 0; margin: 0; }
+        .summary-item { margin-bottom: 15px; padding-left: 25px; position: relative; font-size: 0.95rem; }
+        .summary-item::before { content: "✔"; position: absolute; left: 0; color: var(--accent-gold); }
+
+        /* --- Brand Section --- */
+        .brand-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 80px; }
+        .brand-card {
+            background: var(--card-bg); border: 1px solid var(--border-color);
+            border-radius: 20px; overflow: hidden; display: flex; flex-direction: column;
+        }
+        .brand-header { padding: 30px; display: flex; align-items: center; gap: 20px; }
+        .brand-logo-area { height: 50px; font-weight: 900; font-size: 1.5rem; display: flex; align-items: center; justify-content: center; width: 100%; border-radius: 8px; }
+        .hik-brand { color: #fff; background: var(--hik-navy); }
+        .opt-brand { color: #fff; background: var(--opt-red); }
+        .brand-body { padding: 0 30px 40px; flex-grow: 1; }
+        .brand-body h3 { font-size: 1.4rem; color: #fff; margin: 20px 0; }
+        .tech-list { margin-top: 20px; }
+        .tech-tag {
+            display: inline-block; background: #222; border: 1px solid #444;
+            padding: 3px 10px; border-radius: 4px; font-size: 0.75rem;
+            margin: 0 5px 8px 0; color: var(--accent-blue);
+        }
+
+        /* --- Article Layout --- */
         .article-section { max-width: 900px; margin: 60px auto 100px; }
         .article-h2 { font-size: 2rem; border-left: 5px solid var(--accent-blue); padding-left: 20px; margin-bottom: 40px; }
         .article-p { font-size: 1.05rem; color: var(--text-dim); margin-bottom: 30px; }
+        .image-container { background: #000; border-radius: 12px; padding: 40px; margin: 40px 0; text-align: center; border: 1px solid #333; }
+        .image-caption { font-size: 0.8rem; color: var(--accent-gold); margin-top: 15px; }
+
+        /* --- Action Box --- */
+        .action-box {
+            background: linear-gradient(135deg, #111 0%, #000 100%);
+            border: 1px solid var(--accent-blue);
+            padding: 60px; border-radius: 24px; text-align: center; margin-top: 80px;
+        }
+        .btn {
+            display: inline-block; background: var(--accent-blue); color: #000;
+            padding: 18px 50px; border-radius: 50px; font-weight: 900;
+            text-decoration: none; transition: 0.3s; margin-top: 20px;
+        }
+        .btn:hover { background: #fff; transform: scale(1.05); }
+
+        /* --- Footer (Updated) --- */
+        .main-footer {
+            padding: 80px 0;
+            background: #021111;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            text-align: center;
+        }
+        .footer-info-card {
+            margin: 40px auto; padding: 40px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.1);
+            max-width: 800px; backdrop-filter: blur(10px);
+        }
+        .footer-company { font-size: 1.4rem; font-weight: 700; color: #d4af37; margin-bottom: 20px; letter-spacing: 0.1em; }
+        .contact-grid { display: flex; justify-content: center; gap: 40px; margin-top: 20px; flex-wrap: wrap; color: #e2e8f0; }
+        .contact-grid strong { color: #d4af37; margin-right: 8px; }
 
         @media (max-width: 850px) {
-            .partner-logos { gap: 20px; }
-            .partner-logos img { height: 30px; }
+            .brand-grid { grid-template-columns: 1fr; }
             .hero-title { font-size: 1.8rem; }
+            .contact-grid { gap: 15px; flex-direction: column; }
         }
     </style>
 </head>
@@ -100,173 +147,105 @@
             <img src="hik-logo.png" alt="HIKROBOT">
             <img src="opt-logo.png" alt="OPT ENGINEERING">
         </div>
-
         <div class="hero-badge">TECHNICAL INSIGHT 202X</div>
-        
         <h1 class="hero-title">「工場の目」の限界突破：<br>AIと光学技術の融合がもたらすパラダイムシフト</h1>
     </header>
-
-    <main class="article-section">
-        <h2 class="article-h2">知能化するビジョンと、進化する光学</h2>
-        <p class="article-p">
-            製造現場における「自動化」は今、単なるルールの実行から「自律的な判断」のフェーズへと移行しています。
-            業界をリードするHIKROBOTのAI搭載スマートカメラと、OPT Engineeringが誇る高精度なテレセントリックレンズの融合は、
-            これまで人間の感覚に頼らざるを得なかった外観検査や、ミクロン単位の精密計測を完全に無人化するポテンシャルを秘めています。
-        </p>
-        </main>
-</div>
-
-</body>
-</html>
 
     <div class="summary-box">
         <h2>【エグゼクティブ・サマリー】</h2>
         <ul class="summary-list">
             <li class="summary-item">検査自動化は「画素数競争」から「情報の質」と「エッジでの即時判断」へ移行。</li>
-            <li class="summary-item">HIKROBOTのAI搭載エッジ処理により、PCレスで微細欠陥の検知・判定を完結。</li>
+            <li class="summary-item">HIKROBOTのエッジ処理により、PCレスで微細欠陥の検知・判定を完結。</li>
             <li class="summary-item">OPT ENGINEERINGの光学精度がAIの演算負荷を下げ、システム全体のROIを最大化。</li>
         </ul>
     </div>
 
-    <!-- Brand Features Section -->
-    <div class="brand-grid">
-        <!-- HIKROBOT -->
-        <div class="brand-card">
-            <div class="brand-header">
-                <div class="brand-logo-area hik-brand">HIKROBOT</div>
-            </div>
-            <div class="brand-body">
-                <h3>インテリジェントな判定の「脳」</h3>
-                <p>世界トップクラスのシェアを誇るHIKROBOT。単なるカメラメーカーではなく、VPU/GPUを搭載した「スマートカメラ（SCシリーズ）」によって、検査PCを廃止する先駆者です。</p>
-                <div class="tech-list">
-                    <span class="tech-tag">SCシリーズ：AIプロセッサ内蔵</span>
-                    <span class="tech-tag">VMソフトウェア：ノンコードAI開発</span>
-                    <span class="tech-tag">超高速ラインスキャン</span>
-                    <span class="tech-tag">ディープラーニング検品</span>
+    <main>
+        <section class="article-section">
+            <h2 class="article-h2">知能化するビジョンと、進化する光学</h2>
+            <p class="article-p">
+                製造現場における「自動化」は今、単なるルールの実行から「自律的な判断」のフェーズへと移行しています。
+                業界をリードするHIKROBOTのAI搭載スマートカメラと、OPT Engineeringの高精度テレセントリックレンズの融合は、
+                これまで人間の感覚に頼らざるを得なかった外観検査を完全に無人化するポテンシャルを秘めています。
+            </p>
+        </section>
+
+        <div class="brand-grid">
+            <!-- HIKROBOT -->
+            <div class="brand-card">
+                <div class="brand-header"><div class="brand-logo-area hik-brand">HIKROBOT</div></div>
+                <div class="brand-body">
+                    <h3>判定の「脳」をインテリジェントに</h3>
+                    <p>SCシリーズにより、検査PCを廃止。VPU/GPU搭載のエッジデバイスがリアルタイムに推論を実行します。</p>
+                    <div class="tech-list">
+                        <span class="tech-tag">SCシリーズ：AI内蔵</span>
+                        <span class="tech-tag">VM：ノンコード開発</span>
+                        <span class="tech-tag">ディープラーニング</span>
+                    </div>
                 </div>
-                <p style="margin-top: 15px;">特徴：圧倒的な量産背景によるコストパフォーマンスと、複雑な非定形欠陥を瞬時に学習・推論するアルゴリズムの堅牢性。</p>
+            </div>
+            <!-- OPT -->
+            <div class="brand-card">
+                <div class="brand-header"><div class="brand-logo-area opt-brand">OPT ENGINEERING</div></div>
+                <div class="brand-body">
+                    <h3>究極の入力系でノイズを排除</h3>
+                    <p>物理レイヤーで歪みをゼロにし、AIが最も判断しやすい「正解の画像」を撮像段階で生成します。</p>
+                    <div class="tech-list">
+                        <span class="tech-tag">テレセントリックレンズ</span>
+                        <span class="tech-tag">360°外観検査</span>
+                        <span class="tech-tag">サブミクロン精度</span>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <!-- OPT ENGINEERING -->
-        <div class="brand-card">
-            <div class="brand-header">
-                <div class="brand-logo-area opt-brand">OPT ENGINEERING</div>
-            </div>
-            <div class="brand-body">
-                <h3>ノイズを排除する「究極の入力系」</h3>
-                <p>イタリアが誇る精密光学の雄。AIが最も判断しやすい「正解の画像」を作るために、物理レイヤーで歪みをゼロにし、コントラストを最大化します。</p>
-                <div class="tech-list">
-                    <span class="tech-tag">テレセントリックレンズの世界的権威</span>
-                    <span class="tech-tag">360°外観検査レンズ</span>
-                    <span class="tech-tag">特殊波長照明技術</span>
-                    <span class="tech-tag">サブミクロン精度の歪み補正</span>
-                </div>
-                <p style="margin-top: 15px;">特徴：レンズ歪みや遠近感を物理的に解消。AIが「迷う」原因となるノイズを撮像段階でカットし、判定精度を極限まで高めます。</p>
-            </div>
-        </div>
-    </div>
-
-<!-- 「静かなる課題」への技術的回答セクション -->
-<section class="article-section">
-    <h2 class="article-h2">「静かなる課題」への技術的回答</h2>
-    <p class="article-p">
-        多くの現場で「AIを入れたが精度が安定しない」という声が上がります。その原因は、光学系を軽視し、不鮮明な画像をソフトウェアの力だけで解決しようとする設計思想にあります。
-        <strong>AIは魔法ではありません。</strong> 入力される画像の SN比（信号対雑音比）が低ければ、学習コストは膨らみ、判定は不安定になります。
-    </p>
-
-    <!-- 01. OPT Engineering: 物理層の正解 -->
-    <div class="image-container">
-        <img src="opt.png" alt="OPT Telecentric Solution" style="width:100%; border-radius: 8px;">
-        <div class="image-caption">図1：OPTテレセントリックレンズによる歪みのない撮像（左）とAI判定の最適化（右）</div>
-    </div>
-    
-    <div class="solution-detail" style="margin-bottom: 60px;">
-        <h3 style="color: var(--opt-red); border-bottom: 1px solid #333; padding-bottom: 10px;">OPT ENGINEERING：AIの判断を迷わせない「撮像の純化」</h3>
-        <p class="article-p">
-            AIの推論精度を100%に近づける最短ルートは、アルゴリズムの改良ではなく「物理的な制約」の排除です。OPTのテレセントリックレンズは、周辺歪みや遠近感を排除し、AIにとって最も解釈しやすい「正解の画像」を提供します。これにより、AIモデルの軽量化と、圧倒的な判定安定性を両立させます。
-        </p>
-    </div>
-
-    <!-- 02. HIKROBOT: 処理層の経済性とエッジAI -->
-    <div class="hik-economic-section" style="background: rgba(26, 58, 110, 0.1); padding: 40px; border-radius: 16px; border: 1px solid var(--hik-navy);">
-        <h3 style="color: var(--accent-blue); margin-top: 0;">HIKROBOT：エッジAIによる「システム経済性」の革命</h3>
-        
-        <div style="display: flex; gap: 30px; flex-wrap: wrap; margin: 30px 0;">
-            <!-- HIK エッジAI 図解エリア -->
-            <div style="flex: 1; min-width: 300px; background: #000; padding: 20px; border-radius: 12px; text-align: center;">
-                <div style="color: var(--accent-gold); font-size: 0.8rem; margin-bottom: 15px; font-weight: bold;">【HIKROBOT Edge AI Architecture】</div>
-                <div style="display: flex; justify-content: space-around; align-items: center; color: #fff; font-size: 0.9rem;">
-                    <div style="border: 1px solid var(--accent-blue); padding: 10px; border-radius: 5px;">撮影（センサ）</div>
-                    <div style="font-size: 1.5rem;">→</div>
-                    <div style="background: var(--hik-navy); padding: 15px; border-radius: 5px; font-weight: bold;">エッジAI推論<br><span style="font-size: 0.7rem; font-weight: normal;">(SCスマートカメラ内)</span></div>
-                    <div style="font-size: 1.5rem;">→</div>
-                    <div style="border: 1px solid #4caf50; padding: 10px; border-radius: 5px;">OK / NG</div>
-                </div>
-                <p style="color: var(--text-dim); font-size: 0.75rem; margin-top: 15px;">カメラ内部で判定が完結。高価な産業用PCやGPUボードは不要です。</p>
+        <section class="article-section">
+            <h2 class="article-h2">「静かなる課題」への技術的回答</h2>
+            <p class="article-p"><strong>AIは魔法ではありません。</strong> 入力される画像のSN比が低ければ、判定は不安定になります。光学系による「撮像の純化」こそが成功の鍵です。</p>
+            
+            <div class="image-container">
+                <img src="opt.png" alt="OPT Solution" style="width:100%; border-radius: 8px;">
+                <div class="image-caption">図1：OPTテレセントリックレンズによる歪みのない撮像とAI最適化</div>
             </div>
 
-            <!-- 経済性 比較表 -->
-            <div style="flex: 1; min-width: 300px;">
-                <table style="width: 100%; border-collapse: collapse; font-size: 0.85rem; color: var(--text-main);">
-                    <thead>
-                        <tr style="border-bottom: 2px solid #444;">
-                            <th style="padding: 10px; text-align: left;">導入コスト項目</th>
-                            <th style="padding: 10px; text-align: center;">従来PCシステム</th>
-                            <th style="padding: 10px; text-align: center; color: var(--accent-blue);">HIK エッジAI</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr style="border-bottom: 1px solid #333;">
-                            <td style="padding: 10px;">ハードウェア費用</td>
-                            <td style="padding: 10px; text-align: center;">高（PC+GPU）</td>
-                            <td style="padding: 10px; text-align: center; font-weight: bold;">低（カメラのみ）</td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid #333;">
-                            <td style="padding: 10px;">設置・配線工数</td>
-                            <td style="padding: 10px; text-align: center;">煩雑</td>
-                            <td style="padding: 10px; text-align: center; font-weight: bold;">極小</td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid #333;">
-                            <td style="padding: 10px;">OS・保守リスク</td>
-                            <td style="padding: 10px; text-align: center;">あり</td>
-                            <td style="padding: 10px; text-align: center; font-weight: bold;">なし（専用OS）</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <p style="color: var(--accent-gold); font-weight: bold; font-size: 0.9rem; margin-top: 15px; text-align: right;">
-                    トータル導入コストを約30～50%削減可能
-                </p>
+            <div class="hik-economic-section" style="background: rgba(26, 58, 110, 0.1); padding: 40px; border-radius: 16px; border: 1px solid var(--hik-navy);">
+                <h3 style="color: var(--accent-blue); margin-top: 0;">HIKROBOT：エッジAIによる革命</h3>
+                <p class="article-p">PCレス化により、トータル導入コストを約30～50%削減。専用OSによる長期安定稼働を実現します。</p>
+                <img src="hik.png" alt="HIK Solution" style="width:100%; border-radius: 8px; margin-top: 20px;">
             </div>
-        </div>
-
-        <p class="article-p">
-            HIKROBOTのスマートカメラ（SCシリーズ）は、カメラ本体にAIプロセッサを内蔵しています。これにより、膨大な画像データをPCへ転送する際の「レイテンシ（遅延）」と「PC管理の工数」を根絶。現場のPLCと直接通信し、即座に結果を出力する「運用の経済性」こそが、製造DXにおける真の回答です。
-        </p>
-          <img src="hik.png" alt="OPT Telecentric Solution" style="width:100%; border-radius: 8px;">
-    </div>
-</section>
-
-        <h2 class="article-h2">202X年の勝利条件：ミニマル自動化</h2>
-        <p class="article-p">
-            今後の製造DXの成否は、いかにシステムを「シンプル」に保てるかにかかっています。
-        </p>
-        <ul style="color: var(--text-dim); margin-bottom: 40px;">
-            <li style="margin-bottom: 15px;"><strong>PCレス化：</strong> HIKROBOTのスマートカメラにより、ライン脇の巨大なPCラックを排除。通信遅延のないリアルタイム判定を実現。</li>
-            <li style="margin-bottom: 15px;"><strong>情報の鮮明化：</strong> OPTの光学設計により、AIが識別すべき「特徴量」を物理的に際立たせる。これにより軽量なAIモデルでも超高精度な検知が可能に。</li>
-        </ul>
+        </section>
 
         <div class="action-box">
             <span class="hero-badge" style="border-color: var(--accent-blue); color: var(--accent-blue);">SOLUTION ARCHITECT</span>
             <h3>複雑すぎる検査システムを、<br>「最強の2社」で再構築しませんか？</h3>
-            <p class="article-p" style="text-align: center;">HIKROBOTのAIパワーとOPTの精密光学を組み合わせた、<br>現場主導型の「ミニマル自動化」構成案をご提案します。</p>
-            <a href="#" class="btn">技術資料・検証事例を請求する</a>
+            <a href="mailto:sales@chronix.co.jp" class="btn">技術資料・検証事例を請求する</a>
         </div>
-    </div>
+    </main>
 </div>
 
-<footer style="text-align: center; padding: 60px; color: #444; border-top: 1px solid #222;">
-    <p>&copy; 2026 Advanced Inspection Strategy. All Rights Reserved.</p>
+<!-- 修正済みフッター -->
+<footer class="main-footer">
+    <div class="footer-content" style="max-width: 1000px; margin: 0 auto; padding: 0 20px;">
+        <img src="logo.png" alt="CHRONIX" style="height: 50px; margin-bottom: 25px; filter: brightness(1.5);">
+        <p style="font-size: 1.1rem; color: #fff; font-weight: 300; letter-spacing: 0.05em;">
+            センサーのポテンシャルを100%引き出す精密光学系との統合設計をサポートします。
+        </p>
+
+        <div class="footer-info-card">
+            <p class="footer-company">クロニクス株式会社</p>
+            <address style="font-style: normal; color: #e2e8f0; line-height: 2;">
+                <p>〒160-0023 東京都新宿区西新宿3-2-11 新宿三井ビルディング二号館 904室</p>
+                <div class="contact-grid">
+                    <p><strong>TEL</strong> 03-5322-7191</p>
+                    <p><strong>FAX</strong> 03-5322-7790</p>
+                </div>
+            </address>
+        </div>
+
+        <p style="margin-top: 50px; font-size: 0.8rem; color: #64748b; letter-spacing: 0.1em;">
+            © 2026 CHRONIX
+        </p>
+    </div>
 </footer>
 
 </body>
