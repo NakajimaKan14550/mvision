@@ -289,92 +289,331 @@
     </div>
 </section>
 
-       <section class="article-section">
-    <h2 class="article-h2">光学イメージングの専門家：Opto Engineering</h2>
-    <p class="article-p">
-        イタリア・マントヴァに本拠を置くOpto Engineeringは、物理法則をハックするような独創的なレンズ設計で、世界のマシンビジョン市場に「魔法」をもたらします。
-    </p>
+      <!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opto Engineering 360° Inspection Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --opt-blue: #004098;
+            --opt-red: #d32f2f;
+            --accent-gold: #b8860b;
+            --bg-light: #f8f9fc;
+            --text-main: #2c3e50;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* ヘッダーセクション */
+        .header-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .header-title h1 {
+            color: var(--opt-blue);
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        .header-title p {
+            font-size: 1.1rem;
+            color: #666;
+        }
+
+        /* 2カラムグリッド */
+        .brand-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .brand-card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+            border: 1px solid #edf2f7;
+        }
+
+        .brand-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .brand-card h3 {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.4rem;
+            margin-top: 0;
+        }
+
+        .brand-card p {
+            color: #5a67d8; /* 少し柔らかい紺色 */
+            font-size: 0.95rem;
+            color: #4a5568;
+        }
+
+        /* メインフィーチャー（液体レンズ） */
+        .main-featured-product {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: var(--shadow);
+            margin-bottom: 50px;
+            border-top: 5px solid var(--opt-blue);
+        }
+
+        .featured-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .featured-header h3 {
+            font-size: 1.8rem;
+            color: var(--opt-blue);
+            margin: 0;
+        }
+
+        .featured-content {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .featured-content { grid-template-columns: 1fr; }
+        }
+
+        .featured-image img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .featured-text ul {
+            padding-left: 0;
+            list-style: none;
+        }
+
+        .featured-text li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 15px;
+        }
+
+        .featured-text li::before {
+            content: "\f058"; /* FontAwesome check-circle */
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--opt-blue);
+        }
+
+        /* 比較表 */
+        .table-section {
+            margin-bottom: 60px;
+        }
+
+        .table-section h3 {
+            text-align: center;
+            color: var(--opt-blue);
+            margin-bottom: 30px;
+        }
+
+        .table-wrapper {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 18px;
+            border-bottom: 1px solid #edf2f7;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f1f5f9;
+            color: var(--opt-blue);
+            font-weight: bold;
+        }
+
+        .row-label {
+            text-align: left;
+            background-color: #f8fafc;
+            width: 25%;
+            font-weight: 600;
+        }
+
+        /* ダウンロードセクション */
+        .download-cta {
+            background: linear-gradient(135deg, #004098 0%, #002d6b 100%);
+            color: white;
+            padding: 50px 30px;
+            border-radius: 20px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .download-cta h4 {
+            font-size: 1.6rem;
+            margin-top: 0;
+        }
+
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: white;
+            color: var(--opt-blue);
+            padding: 16px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            margin-top: 20px;
+        }
+
+        .download-btn:hover {
+            transform: scale(1.05);
+            background: #f1f5f9;
+        }
+
+        /* 技術タグ */
+        .tech-tag {
+            display: inline-block;
+            background: #eef2f7;
+            color: #4a5568;
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            margin-right: 5px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-title">
+        <h1>Opto Engineering Solution</h1>
+        <p>光学イメージングの専門家が提案する、次世代の外観検査ソリューション</p>
+    </div>
 
     <div class="brand-grid">
         <div class="brand-card">
-            <div class="brand-body">
-                <h3 style="color: var(--opt-red);"><i class="fas fa-dot-circle"></i> 360°外観検査レンズ</h3>
-                <p>「4台のカメラを1台に」。ボトルのキャップやネジの側面、円筒形ワークの内壁を、1回の撮影で死角なく捉えます。</p>
-                <div class="tech-list">
-                    <span class="tech-tag">PC/PCCDLシリーズ</span>
-                    <span class="tech-tag">ステッチング不要</span>
-                </div>
+            <h3 style="color: var(--opt-red);"><i class="fas fa-dot-circle"></i> 360°外観検査</h3>
+            <p>「4台のカメラを1台に」。ボトルのキャップやネジの側面、円筒形ワークの内壁を、1回の撮影で死角なく捉えます。</p>
+            <div class="tech-list">
+                <span class="tech-tag">PC/PCCDLシリーズ</span>
+                <span class="tech-tag">ステッチング不要</span>
             </div>
         </div>
         <div class="brand-card">
-            <div class="brand-body">
-                <h3 style="color: var(--accent-gold);"><i class="fas fa-ruler-combined"></i> テレセントリック・レンズ</h3>
-                <p>遠近感による歪みを物理的にゼロ化。ミクロン単位の精密測定において、世界標準の精度を提供します。</p>
-                <div class="tech-list">
-                    <span class="tech-tag">平行光路設計</span>
-                    <span class="tech-tag">サブミクロン精度</span>
-                </div>
+            <h3 style="color: var(--accent-gold);"><i class="fas fa-ruler-combined"></i> テレセントリック</h3>
+            <p>遠近感による歪みを物理的にゼロ化。ミクロン単位の精密測定において、世界標準の精度を提供します。</p>
+            <div class="tech-list">
+                <span class="tech-tag">平行光路設計</span>
+                <span class="tech-tag">サブミクロン精度</span>
             </div>
         </div>
     </div>
 
-    <div class="main-featured-product" style="margin-top: 40px; border: 1px solid #eee; border-radius: 12px; padding: 30px; background: #fff;">
-        <h3 style="color: #004098; font-size: 1.5rem; margin-top: 0;">
-            <i class="fas fa-magic"></i> 世界初、360度液体レンズの圧倒的優位性
-        </h3>
-        <div style="display: flex; gap: 30px; align-items: center; flex-wrap: wrap;">
-            <div style="flex: 1; min-width: 300px;">
-                <img src="360.png" alt="360度液体レンズイメージ" style="width: 100%; height: auto; border-radius: 8px;">
+    <div class="main-featured-product">
+        <div class="featured-header">
+            <i class="fas fa-bolt" style="color: #fbc02d; font-size: 1.5rem;"></i>
+            <h3>360度液体レンズ：円筒内面検査の革命</h3>
+        </div>
+        <div class="featured-content">
+            <div class="featured-image">
+                <img src="360.png" alt="360度液体レンズシステム">
             </div>
-            <div style="flex: 1.5; min-width: 300px;">
-                <p>OEだけが実現した、360度光学系と液体レンズの融合。物理的な可動部なしで、ミリ秒単位の超高速リフォーカスを可能にしました。</p>
-                <ul style="padding-left: 20px; color: #555;">
-                    <li><strong>多品種混流への対応:</strong> ワークの高さや径が変わっても一瞬でピントを追従</li>
-                    <li><strong>メンテナンスフリー:</strong> 機械的な駆動部がないため、長期安定稼働を実現</li>
-                    <li><strong>設置面積の削減:</strong> 回転機構や複雑な移動ステージが不要</li>
+            <div class="featured-text">
+                <p>OE独自設計の360度光学系と液体レンズを統合。可動部ゼロでミリ秒単位の超高速ピント合わせを実現します。</p>
+                <ul>
+                    <li><strong>多品種混流への対応</strong>：ワークのサイズが変わっても瞬時に追従</li>
+                    <li><strong>メンテナンスフリー</strong>：機械的な駆動部がなく長期安定稼働</li>
+                    <li><strong>設置コスト削減</strong>：回転機構や複雑なステージが不要</li>
                 </ul>
             </div>
         </div>
     </div>
 
-    <h3 class="article-h3" style="margin-top: 40px; color: #004098;">円筒内面検査：用途別推奨モデル比較</h3>
-    <div class="comparison-table-wrapper" style="overflow-x: auto; margin-bottom: 30px;">
-        <table style="width: 100%; border-collapse: collapse; min-width: 500px;">
-            <thead>
-                <tr style="background-color: #f8f9fa;">
-                    <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">比較項目</th>
-                    <th style="border: 1px solid #ddd; padding: 12px; text-align: center;">PCHIL シリーズ</th>
-                    <th style="border: 1px solid #ddd; padding: 12px; text-align: center;">PCPB シリーズ</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th style="border: 1px solid #ddd; padding: 12px; background: #fafafa;">アプローチ</th>
-                    <td style="border: 1px solid #ddd; padding: 12px;">「外」から一括撮像</td>
-                    <td style="border: 1px solid #ddd; padding: 12px;">「中」に入ってスキャン</td>
-                </tr>
-                <tr>
-                    <th style="border: 1px solid #ddd; padding: 12px; background: #fafafa;">主な対象ワーク</th>
-                    <td style="border: 1px solid #ddd; padding: 12px;">ボトルキャップ、浅い金属缶など</td>
-                    <td style="border: 1px solid #ddd; padding: 12px;">エンジンブロック、深いネジ穴など</td>
-                </tr>
-                <tr>
-                    <th style="border: 1px solid #ddd; padding: 12px; background: #fafafa;">強み</th>
-                    <td style="border: 1px solid #ddd; padding: 12px;">タクトタイム極小化・高速撮像</td>
-                    <td style="border: 1px solid #ddd; padding: 12px;">死角の解消・照明一体型</td>
-                </tr>
-            </tbody>
-        </table>
+    <div class="table-section">
+        <h3><i class="fas fa-columns"></i> 用途別推奨モデル比較</h3>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="row-label">比較項目</th>
+                        <th>PCHIL シリーズ</th>
+                        <th>PCPB シリーズ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="row-label">アプローチ</td>
+                        <td>「外」から一括撮像</td>
+                        <td>「中」に入ってスキャン</td>
+                    </tr>
+                    <tr>
+                        <td class="row-label">対象ワーク</td>
+                        <td>ボトルキャップ、浅穴</td>
+                        <td>エンジンブロック、深穴</td>
+                    </tr>
+                    <tr>
+                        <td class="row-label">最大の強み</td>
+                        <td>タクトタイム極小化</td>
+                        <td>深部の死角解消</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 
-    <div class="download-section" style="background-color: #f0f4f9; padding: 30px; text-align: center; border-radius: 12px; border: 2px dashed #004098;">
-        <h4 style="margin-top: 0;">より詳細な技術解説・撮像事例はこちら</h4>
-        <p>360度レンズの選定基準や、実際の内面検査サンプル画像をまとめた完全レポートを公開中。</p>
-        <a href="360.pdf" download style="display: inline-block; background-color: #004098; color: #fff; padding: 12px 30px; text-decoration: none; border-radius: 30px; font-weight: bold; margin-top: 10px;">
-            <i class="fas fa-file-pdf"></i> 製品レポート (360.pdf) をダウンロード
+    <div class="download-cta">
+        <h4>より詳細な技術解説・撮像事例はこちら</h4>
+        <p>360度レンズの選定基準や、実際の内面検査サンプル画像をまとめた完全レポート</p>
+        <a href="360.pdf" download class="download-btn">
+            <i class="fas fa-file-pdf"></i> 資料をダウンロード (PDF)
         </a>
     </div>
-</section>
+</div>
+
+</body>
+</html>
 
     <div class="hik-economic-section" style="margin-top: 40px; background: rgba(230, 0, 18, 0.05); border: 1px solid rgba(230, 0, 18, 0.2); padding: 40px; border-radius: 20px;">
         <h3 style="color: var(--opt-red); margin-top: 0;">装置メーカーが「採用せざるを得ない」3つの急所</h3>
