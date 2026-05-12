@@ -29,20 +29,14 @@
 
         .container { max-width: 1100px; margin: 0 auto; padding: 20px 24px 60px; }
 
-        /* --- Global Navigation --- */
+        /* --- Navigation --- */
         nav { padding: 20px 0; margin-bottom: 20px; }
         .top-logo { height: 45px; width: auto; display: block; transition: opacity 0.3s; }
-        .top-logo:hover { opacity: 0.8; }
 
         /* --- Header --- */
         header { text-align: center; padding: 40px 0 80px; border-bottom: 1px solid var(--border-color); }
         .partner-logos { display: flex; justify-content: center; align-items: center; gap: 40px; margin-bottom: 40px; }
-        .partner-logos img { 
-            height: 50px; 
-            width: auto; 
-            opacity: 0.9; 
-            mix-blend-mode: lighten; /* 白背景ロゴを透過させる */
-        }
+        .partner-logos img { height: 50px; width: auto; opacity: 0.9; mix-blend-mode: lighten; }
 
         .hero-badge {
             display: inline-block; color: var(--accent-gold);
@@ -71,17 +65,17 @@
         .summary-item::before { content: "✔"; position: absolute; left: 0; color: var(--accent-gold); }
 
         /* --- Brand Section --- */
-        .brand-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 80px; }
+        .brand-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 40px; }
         .brand-card {
             background: var(--card-bg); border: 1px solid var(--border-color);
             border-radius: 20px; overflow: hidden; display: flex; flex-direction: column;
         }
         .brand-header { padding: 30px; display: flex; align-items: center; gap: 20px; }
-        .brand-logo-area { height: 50px; font-weight: 900; font-size: 1.5rem; display: flex; align-items: center; justify-content: center; width: 100%; border-radius: 8px; }
+        .brand-logo-area { height: 50px; font-weight: 900; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; width: 100%; border-radius: 8px; }
         .hik-brand { color: #fff; background: var(--hik-navy); }
         .opt-brand { color: #fff; background: var(--opt-red); }
         .brand-body { padding: 0 30px 40px; flex-grow: 1; }
-        .brand-body h3 { font-size: 1.4rem; color: #fff; margin: 20px 0; }
+        .brand-body h3 { font-size: 1.3rem; color: #fff; margin: 20px 0; }
         .tech-list { margin-top: 20px; }
         .tech-tag {
             display: inline-block; background: #222; border: 1px solid #444;
@@ -90,11 +84,17 @@
         }
 
         /* --- Article Layout --- */
-        .article-section { max-width: 900px; margin: 60px auto 100px; }
-        .article-h2 { font-size: 2rem; border-left: 5px solid var(--accent-blue); padding-left: 20px; margin-bottom: 40px; }
-        .article-p { font-size: 1.05rem; color: var(--text-dim); margin-bottom: 30px; }
-        .image-container { background: #000; border-radius: 12px; padding: 40px; margin: 40px 0; text-align: center; border: 1px solid #333; }
+        .article-section { max-width: 900px; margin: 60px auto 40px; }
+        .article-h2 { font-size: 1.8rem; border-left: 5px solid var(--accent-blue); padding-left: 20px; margin-bottom: 30px; }
+        .article-p { font-size: 1.05rem; color: var(--text-dim); margin-bottom: 25px; }
+        .image-container { background: #000; border-radius: 12px; padding: 20px; margin: 40px 0; text-align: center; border: 1px solid #333; }
         .image-caption { font-size: 0.8rem; color: var(--accent-gold); margin-top: 15px; }
+
+        /* --- Table Styling --- */
+        .table-wrapper { overflow-x: auto; margin: 20px 0; }
+        table { width: 100%; border-collapse: collapse; color: var(--text-dim); font-size: 0.9rem; }
+        table th { padding: 15px; text-align: left; border-bottom: 2px solid var(--border-color); color: var(--accent-blue); }
+        table td { padding: 15px; border-bottom: 1px solid var(--border-color); }
 
         /* --- Action Box --- */
         .action-box {
@@ -107,15 +107,9 @@
             padding: 18px 50px; border-radius: 50px; font-weight: 900;
             text-decoration: none; transition: 0.3s; margin-top: 20px;
         }
-        .btn:hover { background: #fff; transform: scale(1.05); }
 
-        /* --- Footer (Updated) --- */
-        .main-footer {
-            padding: 80px 0;
-            background: #021111;
-            border-top: 1px solid rgba(212, 175, 55, 0.2);
-            text-align: center;
-        }
+        /* --- Footer --- */
+        .main-footer { padding: 80px 0; background: #021111; border-top: 1px solid rgba(212, 175, 55, 0.2); text-align: center; }
         .footer-info-card {
             margin: 40px auto; padding: 40px;
             background: rgba(255, 255, 255, 0.03);
@@ -129,7 +123,6 @@
         @media (max-width: 850px) {
             .brand-grid { grid-template-columns: 1fr; }
             .hero-title { font-size: 1.8rem; }
-            .contact-grid { gap: 15px; flex-direction: column; }
         }
     </style>
 </head>
@@ -154,9 +147,9 @@
     <div class="summary-box">
         <h2>【エグゼクティブ・サマリー】</h2>
         <ul class="summary-list">
-            <li class="summary-item">検査自動化は「画素数競争」から「情報の質」と「エッジでの即時判断」へ移行。</li>
-            <li class="summary-item">HIKROBOTのエッジ処理により、PCレスで微細欠陥の検知・判定を完結。</li>
-            <li class="summary-item">OPT ENGINEERINGの光学精度がAIの演算負荷を下げ、システム全体のROIを最大化。</li>
+            <li class="summary-item">検査自動化は「画素数競争」から「情報の質」と「エッジでの即時判断」へ移行。 [cite: 71, 72]</li>
+            <li class="summary-item">HIKROBOTのエッジ処理により、PCレスで微細欠陥の検知・判定を完結。 [cite: 71, 72]</li>
+            <li class="summary-item">OPT ENGINEERINGの光学精度がAIの演算負荷を下げ、システム全体のROIを最大化。 [cite: 71, 72]</li>
         </ul>
     </div>
 
@@ -164,19 +157,18 @@
         <section class="article-section">
             <h2 class="article-h2">知能化するビジョンと、進化する光学</h2>
             <p class="article-p">
-                製造現場における「自動化」は今、単なるルールの実行から「自律的な判断」のフェーズへと移行しています。
+                製造現場における「自動化」は今、単なるルールの実行から「自律的な判断」のフェーズへと移行しています。 [cite: 71]
                 業界をリードするHIKROBOTのAI搭載スマートカメラと、OPT Engineeringの高精度テレセントリックレンズの融合は、
-                これまで人間の感覚に頼らざるを得なかった外観検査を完全に無人化するポテンシャルを秘めています。
+                これまで人間の感覚に頼らざるを得なかった外観検査を完全に無人化するポテンシャルを秘めています。 [cite: 71, 72]
             </p>
         </section>
 
         <div class="brand-grid">
-            <!-- HIKROBOT -->
             <div class="brand-card">
                 <div class="brand-header"><div class="brand-logo-area hik-brand">HIKROBOT</div></div>
                 <div class="brand-body">
                     <h3>判定の「脳」をインテリジェントに</h3>
-                    <p>SCシリーズにより、検査PCを廃止。VPU/GPU搭載のエッジデバイスがリアルタイムに推論を実行します。</p>
+                    <p>SCシリーズにより、検査PCを廃止。VPU/GPU搭載のエッジデバイスがリアルタイムに推論を実行します。 [cite: 71]</p>
                     <div class="tech-list">
                         <span class="tech-tag">SCシリーズ：AI内蔵</span>
                         <span class="tech-tag">VM：ノンコード開発</span>
@@ -184,12 +176,11 @@
                     </div>
                 </div>
             </div>
-            <!-- OPT -->
             <div class="brand-card">
                 <div class="brand-header"><div class="brand-logo-area opt-brand">OPT ENGINEERING</div></div>
                 <div class="brand-body">
                     <h3>究極の入力系でノイズを排除</h3>
-                    <p>物理レイヤーで歪みをゼロにし、AIが最も判断しやすい「正解の画像」を撮像段階で生成します。</p>
+                    <p>物理レイヤーで歪みをゼロにし、AIが最も判断しやすい「正解の画像」を撮像段階で生成します。 [cite: 71, 72]</p>
                     <div class="tech-list">
                         <span class="tech-tag">テレセントリックレンズ</span>
                         <span class="tech-tag">360°外観検査</span>
@@ -201,467 +192,59 @@
 
         <section class="article-section">
             <h2 class="article-h2">「静かなる課題」への技術的回答</h2>
-            <p class="article-p"><strong>AIは魔法ではありません。</strong> 入力される画像のSN比が低ければ、判定は不安定になります。光学系による「撮像の純化」こそが成功の鍵です。</p>
-            
+            <p class="article-p"><strong>AIは魔法ではありません。</strong> 入力される画像のSN比が低ければ、判定は不安定になります。光学系による「撮像の純化」こそが成功の鍵です。 [cite: 71, 72]</p>
             <div class="image-container">
                 <img src="opt.png" alt="OPT Solution" style="width:100%; border-radius: 8px;">
                 <div class="image-caption">図1：OPTテレセントリックレンズによる歪みのない撮像とAI最適化</div>
             </div>
-
-            <div class="hik-economic-section" style="background: rgba(26, 58, 110, 0.1); padding: 40px; border-radius: 16px; border: 1px solid var(--hik-navy);">
-                <h3 style="color: var(--accent-blue); margin-top: 0;">HIKROBOT：エッジAIによる革命</h3>
-                <p class="article-p">PCレス化により、トータル導入コストを約30～50%削減。専用OSによる長期安定稼働を実現します。</p>
-                <img src="hik.png" alt="HIK Solution" style="width:100%; border-radius: 8px; margin-top: 20px;">
-            </div>
         </section>
 
         <section class="article-section">
-    <h2 class="article-h2">インテリジェント・エッジの核心：SCシリーズ</h2>
-    <p class="article-p">
-        Hikrobotのスマートカメラ（SCシリーズ）は、単なる撮像機器ではありません。内部に専用の<strong>VPU（Vision Processing Unit）</strong>およびGPUコアを搭載した「画像処理コンピュータ」そのものです。
-    </p>
-
-    <div class="brand-grid">
-        <div class="brand-card">
-            <div class="brand-body">
-                <h3 style="color: var(--accent-blue);"><i class="fas fa-microchip"></i> 1. PCレス・リアルタイム判定</h3>
-                <p>画像データを外部PCへ転送する際の「通信遅延（レイテンシ）」を物理的に排除。撮像から判定、PLCへの信号出力までを数ミリ秒で完結させます。</p>
-                <div class="tech-list">
-                    <span class="tech-tag">ジッタの最小化</span>
-                    <span class="tech-tag">PC故障リスクのゼロ化</span>
+            <h2 class="article-h2">インテリジェント・エッジの核心：SCシリーズ</h2>
+            <p class="article-p">HIKROBOTのスマートカメラ（SCシリーズ）は、単なる撮像機器ではありません。内部に専用のVPUおよびGPUコアを搭載した「画像処理コンピュータ」そのものです。 [cite: 71]</p>
+            
+            <div class="brand-grid">
+                <div class="brand-card">
+                    <div class="brand-body">
+                        <h3 style="color: var(--accent-blue);"><i class="fas fa-microchip"></i> 1. PCレス・リアルタイム判定</h3>
+                        <p>通信遅延を排除。撮像から判定、PLCへの信号出力までを数ミリ秒で完結させます。 [cite: 71]</p>
+                    </div>
+                </div>
+                <div class="brand-card">
+                    <div class="brand-body">
+                        <h3 style="color: var(--accent-gold);"><i class="fas fa-brain"></i> 2. ディープラーニング内蔵</h3>
+                        <p>キズ、汚れ、個体差といった「非定型な欠陥」をAIが学習し、自動化します。 [cite: 71]</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="brand-card">
-            <div class="brand-body">
-                <h3 style="color: var(--accent-gold);"><i class="fas fa-brain"></i> 2. ディープラーニング内蔵</h3>
-                <p>従来のルールベースアルゴリズムでは不可能だった「非定型な欠陥（キズ、汚れ、個体差）」をAIが学習。人間の「経験」に近い判断を自動化します。</p>
-                <div class="tech-list">
-                    <span class="tech-tag">VMソフトウェア連携</span>
-                    <span class="tech-tag">少量データ学習（OK/NG）</span>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr><th>シリーズ</th><th>特徴</th><th>主な用途</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>SC2000</strong></td><td>低コスト・超小型。基本的な有無検査。 [cite: 71]</td><td>ラベルズレ検知など [cite: 71]</td></tr>
+                        <tr><td><strong>SC3000</strong></td><td>AIプロセッサ内蔵。外観検査に最適。 [cite: 71]</td><td>金属のキズ、汚れ検査 [cite: 71]</td></tr>
+                        <tr><td><strong>SC7000</strong></td><td>ハイエンド。複雑な多項目検査を1台で。 [cite: 71]</td><td>自動車部品、基板検査 [cite: 71]</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="article-section" style="background: rgba(230, 0, 18, 0.05); padding: 40px; border-radius: 20px; border: 1px solid rgba(230, 0, 18, 0.2);">
+            <h2 class="article-h2" style="border-color: var(--opt-red);">装置設計の急所を突く360°光学系</h2>
+            <div class="brand-grid" style="gap: 20px;">
+                <div>
+                    <h4 style="color: #fff; border-bottom: 2px solid var(--opt-red); padding-bottom: 8px;">圧倒的コスト・スペース削減</h4>
+                    <p style="font-size: 0.85rem; color: var(--text-dim);">カメラ4セットを1セットへ集約。 [cite: 71, 72] 設置面積の制限を突破します。 [cite: 71, 72]</p>
+                </div>
+                <div>
+                    <h4 style="color: #fff; border-bottom: 2px solid var(--opt-red); padding-bottom: 8px;">ソフト開発工数の劇的解消</h4>
+                    <p style="font-size: 0.85rem; color: var(--text-dim);">1ショットで全周撮像。 [cite: 71, 72] 画像連結（ステッチング）の手間をゼロにします。 [cite: 71, 72]</p>
                 </div>
             </div>
-        </div>
-    </div>
-
-    <div class="hik-economic-section" style="margin-top: 40px; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-color); padding: 40px; border-radius: 20px;">
-        <h3 style="color: #fff; margin-top: 0;">運用目的に応じたシリーズ展開</h3>
-        <div style="overflow-x: auto;">
-            <table style="width: 100%; border-collapse: collapse; color: var(--text-dim); font-size: 0.9rem;">
-                <thead>
-                    <tr style="border-bottom: 2px solid var(--border-color); color: var(--accent-blue);">
-                        <th style="padding: 15px; text-align: left;">シリーズ</th>
-                        <th style="padding: 15px; text-align: left;">特徴</th>
-                        <th style="padding: 15px; text-align: left;">主な用途</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr style="border-bottom: 1px solid var(--border-color);">
-                        <td style="padding: 15px; color: #fff;"><strong>SC2000 (エントリー)</strong></td>
-                        <td>低コスト・超小型。基本的な有無検査・位置決め。</td>
-                        <td>電子部品の有無、ラベルのズレ検知</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid var(--border-color);">
-                        <td style="padding: 15px; color: #fff;"><strong>SC3000 (スタンダード)</strong></td>
-                        <td>ディープラーニング搭載。高性能AIプロセッサ内蔵。</td>
-                        <td>金属のキズ、非定型汚れ、外観検査</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid var(--border-color);">
-                        <td style="padding: 15px; color: #fff;"><strong>SC7000 (ハイエンド)</strong></td>
-                        <td>最大解像度・最高速処理。複雑な多項目検査を1台で完結。</td>
-                        <td>自動車部品、医療機器、大型基板検査</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-    <div class="summary-box" style="margin-top: 60px; border-left: 5px solid var(--accent-blue);">
-        <h3 style="color: var(--accent-blue); margin-top: 0;">スマートカメラに「コードリーダー」が多い理由</h3>
-        <p class="article-p" style="font-size: 0.95rem;">
-            物流や製造ラインでHikrobotのIDシリーズ（コードリーダー）が圧倒的なシェアを持つのは、以下の合理的理由があるからです。
-        </p>
-        <ul class="summary-list">
-            <li class="summary-item"><strong>ASICによる専用回路：</strong> デコード（文字変換）処理をハードウェアレベルで最適化し、爆速の読み取りを実現。</li>
-            <li class="summary-item"><strong>データ量の圧倒的削減：</strong> 数メガバイトの「画像データ」ではなく、数バイトの「文字テキスト」のみを送信するため、通信帯域を圧迫しません。</li>
-            <li class="summary-item"><strong>難読コードへの強さ：</strong> 金属への刻印（DPM）やビニール越しの反射、印字欠けもディープラーニングアルゴリズムが補正して読み取ります。</li>
-        </ul>
-    </div>
-</section>
-
-      <!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Opto Engineering 360° Inspection Solutions</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --opt-blue: #004098;
-            --opt-red: #d32f2f;
-            --accent-gold: #b8860b;
-            --bg-light: #f8f9fc;
-            --text-main: #2c3e50;
-            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-        }
-
-        body {
-            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-            background-color: var(--bg-light);
-            color: var(--text-main);
-            line-height: 1.7;
-            margin: 0;
-            padding: 0;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-
-        /* ヘッダーセクション */
-        .header-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .header-title h1 {
-            color: var(--opt-blue);
-            font-size: 2.2rem;
-            margin-bottom: 10px;
-        }
-
-        .header-title p {
-            font-size: 1.1rem;
-            color: #666;
-        }
-
-        /* 2カラムグリッド */
-        .brand-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-bottom: 50px;
-        }
-
-        .brand-card {
-            background: #ffffff;
-            border-radius: 16px;
-            padding: 30px;
-            box-shadow: var(--shadow);
-            transition: transform 0.3s ease;
-            border: 1px solid #edf2f7;
-        }
-
-        .brand-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .brand-card h3 {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-size: 1.4rem;
-            margin-top: 0;
-        }
-
-        .brand-card p {
-            color: #5a67d8; /* 少し柔らかい紺色 */
-            font-size: 0.95rem;
-            color: #4a5568;
-        }
-
-        /* メインフィーチャー（液体レンズ） */
-        .main-featured-product {
-            background: #ffffff;
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: var(--shadow);
-            margin-bottom: 50px;
-            border-top: 5px solid var(--opt-blue);
-        }
-
-        .featured-header {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 30px;
-        }
-
-        .featured-header h3 {
-            font-size: 1.8rem;
-            color: var(--opt-blue);
-            margin: 0;
-        }
-
-        .featured-content {
-            display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 40px;
-            align-items: center;
-        }
-
-        @media (max-width: 768px) {
-            .featured-content { grid-template-columns: 1fr; }
-        }
-
-        .featured-image img {
-            width: 100%;
-            border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .featured-text ul {
-            padding-left: 0;
-            list-style: none;
-        }
-
-        .featured-text li {
-            position: relative;
-            padding-left: 30px;
-            margin-bottom: 15px;
-        }
-
-        .featured-text li::before {
-            content: "\f058"; /* FontAwesome check-circle */
-            font-family: "Font Awesome 6 Free";
-            font-weight: 900;
-            position: absolute;
-            left: 0;
-            color: var(--opt-blue);
-        }
-
-        /* 比較表 */
-        .table-section {
-            margin-bottom: 60px;
-        }
-
-        .table-section h3 {
-            text-align: center;
-            color: var(--opt-blue);
-            margin-bottom: 30px;
-        }
-
-        .table-wrapper {
-            background: #fff;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        th, td {
-            padding: 18px;
-            border-bottom: 1px solid #edf2f7;
-            text-align: center;
-        }
-
-        th {
-            background-color: #f1f5f9;
-            color: var(--opt-blue);
-            font-weight: bold;
-        }
-
-        .row-label {
-            text-align: left;
-            background-color: #f8fafc;
-            width: 25%;
-            font-weight: 600;
-        }
-
-        /* ダウンロードセクション */
-        .download-cta {
-            background: linear-gradient(135deg, #004098 0%, #002d6b 100%);
-            color: white;
-            padding: 50px 30px;
-            border-radius: 20px;
-            text-align: center;
-            margin-top: 40px;
-        }
-
-        .download-cta h4 {
-            font-size: 1.6rem;
-            margin-top: 0;
-        }
-
-        .download-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            background: white;
-            color: var(--opt-blue);
-            padding: 16px 40px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            margin-top: 20px;
-        }
-
-        .download-btn:hover {
-            transform: scale(1.05);
-            background: #f1f5f9;
-        }
-
-        /* 技術タグ */
-        .tech-tag {
-            display: inline-block;
-            background: #eef2f7;
-            color: #4a5568;
-            padding: 4px 12px;
-            border-radius: 6px;
-            font-size: 0.8rem;
-            margin-right: 5px;
-            font-weight: 600;
-        }
-    </style>
-</head>
-<body>
-
-<div class="container">
-    <div class="header-title">
-        <h1>Opto Engineering Solution</h1>
-        <p>光学イメージングの専門家が提案する、次世代の外観検査ソリューション</p>
-    </div>
-
-    <div class="brand-grid">
-        <div class="brand-card">
-            <h3 style="color: var(--opt-red);"><i class="fas fa-dot-circle"></i> 360°外観検査</h3>
-            <p>「4台のカメラを1台に」。ボトルのキャップやネジの側面、円筒形ワークの内壁を、1回の撮影で死角なく捉えます。</p>
-            <div class="tech-list">
-                <span class="tech-tag">PC/PCCDLシリーズ</span>
-                <span class="tech-tag">ステッチング不要</span>
-            </div>
-        </div>
-        <div class="brand-card">
-            <h3 style="color: var(--accent-gold);"><i class="fas fa-ruler-combined"></i> テレセントリック</h3>
-            <p>遠近感による歪みを物理的にゼロ化。ミクロン単位の精密測定において、世界標準の精度を提供します。</p>
-            <div class="tech-list">
-                <span class="tech-tag">平行光路設計</span>
-                <span class="tech-tag">サブミクロン精度</span>
-            </div>
-        </div>
-    </div>
-
-    <div class="main-featured-product">
-        <div class="featured-header">
-            <i class="fas fa-bolt" style="color: #fbc02d; font-size: 1.5rem;"></i>
-            <h3>360度液体レンズ：円筒内面検査の革命</h3>
-        </div>
-        <div class="featured-content">
-            <div class="featured-image">
-                <img src="360.png" alt="360度液体レンズシステム">
-            </div>
-            <div class="featured-text">
-                <p>OE独自設計の360度光学系と液体レンズを統合。可動部ゼロでミリ秒単位の超高速ピント合わせを実現します。</p>
-                <ul>
-                    <li><strong>多品種混流への対応</strong>：ワークのサイズが変わっても瞬時に追従</li>
-                    <li><strong>メンテナンスフリー</strong>：機械的な駆動部がなく長期安定稼働</li>
-                    <li><strong>設置コスト削減</strong>：回転機構や複雑なステージが不要</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <div class="table-section">
-        <h3><i class="fas fa-columns"></i> 用途別推奨モデル比較</h3>
-        <div class="table-wrapper">
-            <table>
-                <thead>
-                    <tr>
-                        <th class="row-label">比較項目</th>
-                        <th>PCHIL シリーズ</th>
-                        <th>PCPB シリーズ</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="row-label">アプローチ</td>
-                        <td>「外」から一括撮像</td>
-                        <td>「中」に入ってスキャン</td>
-                    </tr>
-                    <tr>
-                        <td class="row-label">対象ワーク</td>
-                        <td>ボトルキャップ、浅穴</td>
-                        <td>エンジンブロック、深穴</td>
-                    </tr>
-                    <tr>
-                        <td class="row-label">最大の強み</td>
-                        <td>タクトタイム極小化</td>
-                        <td>深部の死角解消</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-    <div class="download-cta">
-        <h4>より詳細な技術解説・撮像事例はこちら</h4>
-        <p>360度レンズの選定基準や、実際の内面検査サンプル画像をまとめた完全レポート</p>
-        <a href="360.pdf" download class="download-btn">
-            <i class="fas fa-file-pdf"></i> 資料をダウンロード (PDF)
-        </a>
-    </div>
-</div>
-
-</body>
-</html>
-
-    <div class="hik-economic-section" style="margin-top: 40px; background: rgba(230, 0, 18, 0.05); border: 1px solid rgba(230, 0, 18, 0.2); padding: 40px; border-radius: 20px;">
-        <h3 style="color: var(--opt-red); margin-top: 0;">装置メーカーが「採用せざるを得ない」3つの急所</h3>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 25px;">
-            <div>
-                <h4 style="color: #fff; font-size: 1rem; border-bottom: 2px solid var(--opt-red); padding-bottom: 8px;">1. 圧倒的なコスト・スペース削減</h4>
-                <p style="font-size: 0.85rem; color: var(--text-dim);">カメラ・ケーブル・照明を「4セットから1セット」へ。設置面積に制限のある半導体装置や小型検査機において最強の武器となります。</p>
-            </div>
-            <div>
-                <h4 style="color: #fff; font-size: 1rem; border-bottom: 2px solid var(--opt-red); padding-bottom: 8px;">2. ソフト開発工数の劇的な解消</h4>
-                <p style="font-size: 0.85rem; color: var(--text-dim);">複数カメラの画像を繋ぎ合わせる「ステッチング」が不要。1ショットで全周画像が手に入るため、アルゴリズムが極限までシンプルになります。</p>
-            </div>
-            <div>
-                <h4 style="color: #fff; font-size: 1rem; border-bottom: 2px solid var(--opt-red); padding-bottom: 8px;">3. 現場調整・メンテナンスコストの削減</h4>
-                <p style="font-size: 0.85rem; color: var(--text-dim);">複数カメラの光軸ズレや角度調整といった、出荷後のサポート工数をゼロ化。システムとしての安定性を物理的に保証します。</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="image-container" style="margin-top: 60px;">
-        <div style="display: flex; gap: 20px; align-items: center; justify-content: center; flex-wrap: wrap;">
-            <div style="flex: 1; min-width: 300px; text-align: left;">
-                <h3 style="color: var(--accent-blue);"><i class="fas fa-adjust"></i> ポラライゼーション（偏光）の魔法</h3>
-                <p class="article-p" style="font-size: 0.95rem;">
-                    光学系全体を自社で最適化するOPTの強みは、カメラ「ITALA G」の偏光モデルにも現れています。
-                    金属のテカリやガラスの反射を、ソフトウェアの画像処理ではなく**「物理的な光のフィルタリング」**で消し去ります。
-                </p>
-            </div>
-            <div style="flex: 1; min-width: 300px; background: #111; padding: 20px; border-radius: 12px; border: 1px solid #333;">
-                <span style="color: var(--accent-gold); font-size: 0.8rem; font-weight: bold;">【解決できる課題】</span>
-                <ul style="color: var(--text-dim); font-size: 0.85rem; margin-top: 10px; padding-left: 20px;">
-                    <li>透明フィルム越しのキズ検査</li>
-                    <li>光沢アルミダイカストの寸法測定</li>
-                    <li>基板上のハンダボールの乱反射防止</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <div class="summary-box" style="margin-top: 60px; border-left: 5px solid var(--opt-red);">
-        <h3 style="color: var(--opt-red); margin-top: 0;">「汎用品」の王者に、特殊光学で勝つ</h3>
-        <p class="article-p" style="font-size: 0.95rem;">
-            誰もが使いやすい汎用品を提供する大手メーカーに対し、Opto Engineeringは**「特殊な光学条件」**を求める設計者のためのプロフェッショナルな救世主です。
-            「諦めかけていた死角」や「消えない反射」に直面したとき、OPTのレンズは単なる部品ではなく、システムを救う**「魔法の杖」**へと変わります。
-        </p>
-    </div>
-</section>
-        
+        </section>
 
         <div class="action-box">
             <span class="hero-badge" style="border-color: var(--accent-blue); color: var(--accent-blue);">SOLUTION ARCHITECT</span>
@@ -671,14 +254,9 @@
     </main>
 </div>
 
-<!-- 修正済みフッター -->
 <footer class="main-footer">
     <div class="footer-content" style="max-width: 1000px; margin: 0 auto; padding: 0 20px;">
         <img src="logo.png" alt="CHRONIX" style="height: 50px; margin-bottom: 25px; filter: brightness(1.5);">
-        <p style="font-size: 1.1rem; color: #fff; font-weight: 300; letter-spacing: 0.05em;">
-            センサーのポテンシャルを100%引き出す精密光学系との統合設計をサポートします。
-        </p>
-
         <div class="footer-info-card">
             <p class="footer-company">クロニクス株式会社</p>
             <address style="font-style: normal; color: #e2e8f0; line-height: 2;">
@@ -689,10 +267,7 @@
                 </div>
             </address>
         </div>
-
-        <p style="margin-top: 50px; font-size: 0.8rem; color: #64748b; letter-spacing: 0.1em;">
-            © 2026 CHRONIX
-        </p>
+        <p style="margin-top: 50px; font-size: 0.8rem; color: #64748b;">© 2026 CHRONIX</p>
     </div>
 </footer>
 
