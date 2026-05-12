@@ -31,7 +31,7 @@
 
         /* --- Navigation --- */
         nav { padding: 20px 0; margin-bottom: 20px; }
-        .top-logo { height: 45px; width: auto; display: block; transition: opacity 0.3s; }
+        .top-logo { height: 45px; width: auto; display: block; }
 
         /* --- Header --- */
         header { text-align: center; padding: 40px 0 80px; border-bottom: 1px solid var(--border-color); }
@@ -88,25 +88,26 @@
         .article-h2 { font-size: 1.8rem; border-left: 5px solid var(--accent-blue); padding-left: 20px; margin-bottom: 30px; }
         .article-p { font-size: 1.05rem; color: var(--text-dim); margin-bottom: 25px; }
         .image-container { background: #000; border-radius: 12px; padding: 20px; margin: 40px 0; text-align: center; border: 1px solid #333; }
-        .image-caption { font-size: 0.8rem; color: var(--accent-gold); margin-top: 15px; }
 
         /* --- Table Styling --- */
-        .table-wrapper { overflow-x: auto; margin: 20px 0; }
+        .table-wrapper { overflow-x: auto; margin: 20px 0; background: var(--card-bg); border-radius: 12px; padding: 20px; border: 1px solid var(--border-color); }
         table { width: 100%; border-collapse: collapse; color: var(--text-dim); font-size: 0.9rem; }
         table th { padding: 15px; text-align: left; border-bottom: 2px solid var(--border-color); color: var(--accent-blue); }
         table td { padding: 15px; border-bottom: 1px solid var(--border-color); }
 
-        /* --- Action Box --- */
+        /* --- Download Box (Action Box) --- */
         .action-box {
             background: linear-gradient(135deg, #111 0%, #000 100%);
             border: 1px solid var(--accent-blue);
             padding: 60px; border-radius: 24px; text-align: center; margin-top: 80px;
         }
-        .btn {
-            display: inline-block; background: var(--accent-blue); color: #000;
-            padding: 18px 50px; border-radius: 50px; font-weight: 900;
+        .download-btn {
+            display: inline-flex; align-items: center; gap: 12px;
+            background: var(--accent-blue); color: #000;
+            padding: 18px 40px; border-radius: 50px; font-weight: 900;
             text-decoration: none; transition: 0.3s; margin-top: 20px;
         }
+        .download-btn:hover { background: #fff; transform: scale(1.05); }
 
         /* --- Footer --- */
         .main-footer { padding: 80px 0; background: #021111; border-top: 1px solid rgba(212, 175, 55, 0.2); text-align: center; }
@@ -114,11 +115,10 @@
             margin: 40px auto; padding: 40px;
             background: rgba(255, 255, 255, 0.03);
             border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.1);
-            max-width: 800px; backdrop-filter: blur(10px);
+            max-width: 800px;
         }
-        .footer-company { font-size: 1.4rem; font-weight: 700; color: #d4af37; margin-bottom: 20px; letter-spacing: 0.1em; }
+        .footer-company { font-size: 1.4rem; font-weight: 700; color: #d4af37; margin-bottom: 20px; }
         .contact-grid { display: flex; justify-content: center; gap: 40px; margin-top: 20px; flex-wrap: wrap; color: #e2e8f0; }
-        .contact-grid strong { color: #d4af37; margin-right: 8px; }
 
         @media (max-width: 850px) {
             .brand-grid { grid-template-columns: 1fr; }
@@ -130,9 +130,7 @@
 
 <div class="container">
     <nav>
-        <a href="https://nakajimakan14550.github.io/home/">
-            <img src="logo.png" alt="CHRONIX" class="top-logo">
-        </a>
+        <img src="logo.png" alt="CHRONIX" class="top-logo">
     </nav>
 
     <header>
@@ -147,109 +145,59 @@
     <div class="summary-box">
         <h2>【エグゼクティブ・サマリー】</h2>
         <ul class="summary-list">
-            <li class="summary-item">検査自動化は「画素数競争」から「情報の質」と「エッジでの即時判断」へ移行。 [cite: 71, 72]</li>
-            <li class="summary-item">HIKROBOTのエッジ処理により、PCレスで微細欠陥の検知・判定を完結。 [cite: 71, 72]</li>
-            <li class="summary-item">OPT ENGINEERINGの光学精度がAIの演算負荷を下げ、システム全体のROIを最大化。 [cite: 71, 72]</li>
+            <li class="summary-item">検査自動化は「画素数競争」から「情報の質」と「エッジでの即時判断」へ移行。</li>
+            <li class="summary-item">HIKROBOTのエッジ処理により、PCレスで微細欠陥の検知・判定を完結。</li>
+            <li class="summary-item">OPT ENGINEERINGの光学精度がAIの演算負荷を下げ、システム全体のROIを最大化。</li>
         </ul>
     </div>
 
     <main>
         <section class="article-section">
-            <h2 class="article-h2">知能化するビジョンと、進化する光学</h2>
+            <h2 class="article-h2">インテリジェント・エッジの核心：HIKROBOT SCシリーズ</h2>
             <p class="article-p">
-                製造現場における「自動化」は今、単なるルールの実行から「自律的な判断」のフェーズへと移行しています。 [cite: 71]
-                業界をリードするHIKROBOTのAI搭載スマートカメラと、OPT Engineeringの高精度テレセントリックレンズの融合は、
-                これまで人間の感覚に頼らざるを得なかった外観検査を完全に無人化するポテンシャルを秘めています。 [cite: 71, 72]
+                HIKROBOTのスマートカメラ（SCシリーズ）は、単なる撮像機器ではなく、内部に専用のVPUおよびGPUコアを搭載した「画像処理コンピュータ」そのものです。
+                外部PCへのデータ転送を不要にすることで、通信遅延（レイテンシ）を物理的に排除し、リアルタイム判定を実現します。
             </p>
-        </section>
-
-        <div class="brand-grid">
-            <div class="brand-card">
-                <div class="brand-header"><div class="brand-logo-area hik-brand">HIKROBOT</div></div>
-                <div class="brand-body">
-                    <h3>判定の「脳」をインテリジェントに</h3>
-                    <p>SCシリーズにより、検査PCを廃止。VPU/GPU搭載のエッジデバイスがリアルタイムに推論を実行します。 [cite: 71]</p>
-                    <div class="tech-list">
-                        <span class="tech-tag">SCシリーズ：AI内蔵</span>
-                        <span class="tech-tag">VM：ノンコード開発</span>
-                        <span class="tech-tag">ディープラーニング</span>
-                    </div>
-                </div>
-            </div>
-            <div class="brand-card">
-                <div class="brand-header"><div class="brand-logo-area opt-brand">OPT ENGINEERING</div></div>
-                <div class="brand-body">
-                    <h3>究極の入力系でノイズを排除</h3>
-                    <p>物理レイヤーで歪みをゼロにし、AIが最も判断しやすい「正解の画像」を撮像段階で生成します。 [cite: 71, 72]</p>
-                    <div class="tech-list">
-                        <span class="tech-tag">テレセントリックレンズ</span>
-                        <span class="tech-tag">360°外観検査</span>
-                        <span class="tech-tag">サブミクロン精度</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <section class="article-section">
-            <h2 class="article-h2">「静かなる課題」への技術的回答</h2>
-            <p class="article-p"><strong>AIは魔法ではありません。</strong> 入力される画像のSN比が低ければ、判定は不安定になります。光学系による「撮像の純化」こそが成功の鍵です。 [cite: 71, 72]</p>
-            <div class="image-container">
-                <img src="opt.png" alt="OPT Solution" style="width:100%; border-radius: 8px;">
-                <div class="image-caption">図1：OPTテレセントリックレンズによる歪みのない撮像とAI最適化</div>
-            </div>
-        </section>
-
-        <section class="article-section">
-            <h2 class="article-h2">インテリジェント・エッジの核心：SCシリーズ</h2>
-            <p class="article-p">HIKROBOTのスマートカメラ（SCシリーズ）は、単なる撮像機器ではありません。内部に専用のVPUおよびGPUコアを搭載した「画像処理コンピュータ」そのものです。 [cite: 71]</p>
             
-            <div class="brand-grid">
-                <div class="brand-card">
-                    <div class="brand-body">
-                        <h3 style="color: var(--accent-blue);"><i class="fas fa-microchip"></i> 1. PCレス・リアルタイム判定</h3>
-                        <p>通信遅延を排除。撮像から判定、PLCへの信号出力までを数ミリ秒で完結させます。 [cite: 71]</p>
-                    </div>
-                </div>
-                <div class="brand-card">
-                    <div class="brand-body">
-                        <h3 style="color: var(--accent-gold);"><i class="fas fa-brain"></i> 2. ディープラーニング内蔵</h3>
-                        <p>キズ、汚れ、個体差といった「非定型な欠陥」をAIが学習し、自動化します。 [cite: 71]</p>
-                    </div>
-                </div>
-            </div>
-
             <div class="table-wrapper">
+                <h3>SCシリーズ ラインナップ</h3>
                 <table>
                     <thead>
                         <tr><th>シリーズ</th><th>特徴</th><th>主な用途</th></tr>
                     </thead>
                     <tbody>
-                        <tr><td><strong>SC2000</strong></td><td>低コスト・超小型。基本的な有無検査。 [cite: 71]</td><td>ラベルズレ検知など [cite: 71]</td></tr>
-                        <tr><td><strong>SC3000</strong></td><td>AIプロセッサ内蔵。外観検査に最適。 [cite: 71]</td><td>金属のキズ、汚れ検査 [cite: 71]</td></tr>
-                        <tr><td><strong>SC7000</strong></td><td>ハイエンド。複雑な多項目検査を1台で。 [cite: 71]</td><td>自動車部品、基板検査 [cite: 71]</td></tr>
+                        <tr><td><strong>SC2000 (エントリー)</strong></td><td>低コスト・超小型。基本的な有無検査・位置決め。</td><td>電子部品の有無検知など</td></tr>
+                        <tr><td><strong>SC3000 (スタンダード)</strong></td><td>ディープラーニング搭載。高性能AIプロセッサ内蔵。</td><td>金属のキズ、汚れ外観検査</td></tr>
+                        <tr><td><strong>SC7000 (ハイエンド)</strong></td><td>最大解像度・最高速処理。複雑な多項目検査を1台で。</td><td>自動車、医療機器検査</td></tr>
                     </tbody>
                 </table>
             </div>
         </section>
 
-        <section class="article-section" style="background: rgba(230, 0, 18, 0.05); padding: 40px; border-radius: 20px; border: 1px solid rgba(230, 0, 18, 0.2);">
-            <h2 class="article-h2" style="border-color: var(--opt-red);">装置設計の急所を突く360°光学系</h2>
-            <div class="brand-grid" style="gap: 20px;">
-                <div>
-                    <h4 style="color: #fff; border-bottom: 2px solid var(--opt-red); padding-bottom: 8px;">圧倒的コスト・スペース削減</h4>
-                    <p style="font-size: 0.85rem; color: var(--text-dim);">カメラ4セットを1セットへ集約。 [cite: 71, 72] 設置面積の制限を突破します。 [cite: 71, 72]</p>
-                </div>
-                <div>
-                    <h4 style="color: #fff; border-bottom: 2px solid var(--opt-red); padding-bottom: 8px;">ソフト開発工数の劇的解消</h4>
-                    <p style="font-size: 0.85rem; color: var(--text-dim);">1ショットで全周撮像。 [cite: 71, 72] 画像連結（ステッチング）の手間をゼロにします。 [cite: 71, 72]</p>
-                </div>
+        <section class="article-section">
+            <h2 class="article-h2">撮像の純化：OPT ENGINEERINGの役割</h2>
+            <p class="article-p">
+                AI（脳）が正しく判断するためには、ノイズのない「正解の画像」が不可欠です。
+                OPT Engineeringのテレセントリックレンズや360°レンズは、物理レイヤーで歪みをゼロにし、AIの演算負荷を劇的に下げます。
+            </p>
+            <div class="image-container">
+                <img src="opt.png" alt="OPT Solution" style="width:100%; border-radius: 8px;">
+                <p style="color: var(--accent-gold); font-size: 0.8rem; margin-top: 10px;">図1：OPT光学系による撮像の最適化</p>
             </div>
         </section>
 
         <div class="action-box">
-            <span class="hero-badge" style="border-color: var(--accent-blue); color: var(--accent-blue);">SOLUTION ARCHITECT</span>
-            <h3>複雑すぎる検査システムを、<br>「最強の2社」で再構築しませんか？</h3>
-            <a href="mailto:sales@chronix.co.jp" class="btn">技術資料・検証事例を請求する</a>
+            <span class="hero-badge" style="border-color: var(--accent-blue); color: var(--accent-blue);">TECHNICAL RESOURCES</span>
+            <h3>HIKROBOT × OPT<br>統合ソリューション資料をダウンロード</h3>
+            <p style="color: var(--text-dim); margin-bottom: 20px;">エッジAIの導入メリットから、具体的な撮像事例・構成案までを網羅した詳細レポートを公開中。</p>
+            <a href="hik_opt_report.pdf" download class="download-btn">
+                <i class="fas fa-file-pdf"></i> 資料をダウンロード (PDF)
+            </a>
+            <div style="margin-top: 20px;">
+                <a href="mailto:sales@chronix.co.jp" style="color: var(--accent-blue); text-decoration: none; font-size: 0.9rem;">
+                    <i class="fas fa-envelope"></i> 技術的なお問い合わせ・検証依頼はこちら
+                </a>
+            </div>
         </div>
     </main>
 </div>
